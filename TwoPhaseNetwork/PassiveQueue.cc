@@ -26,7 +26,9 @@ void PassiveQueue::initialize()
     droppedSignal = registerSignal("dropped");
     queueingTimeSignal = registerSignal("queueingTime");
     queueLengthSignal = registerSignal("queueLength");
+    queueLengthU1Signal = registerSignal("queueLengthU1");
     emit(queueLengthSignal, 0);
+    emit(queueLengthU1Signal, 0);
 
     capacity = par("capacity");
     queue.setName("queue");
@@ -58,6 +60,7 @@ void PassiveQueue::handleMessage(cMessage *msg)
         // enqueue if no idle server found
         queue.insert(job);
         emit(queueLengthSignal, length());
+        emit(queueLengthU1Signal, lengthU1());
         job->setQueueCount(job->getQueueCount() + 1);
     }
     else if (length() == 0) {
@@ -79,6 +82,22 @@ int PassiveQueue::length()
     return queue.getLength();
 }
 
+int PassiveQueue::lengthU1()
+{
+    std::cerr << "countU1";
+    int countU1 = 0;
+    for(int i=0; i<queue.getLength(); i++){
+        Job *currentJob = (Job *)queue.get(i);
+        if( currentJob->getKind() == 1){
+            std::cerr << "countU1";
+            std::cerr << countU1;
+            countU1 = countU1++;
+            std::cerr << countU1;
+        }
+    }
+    return countU1;
+}
+
 void PassiveQueue::request(int gateIndex)
 {
     Enter_Method("request()!");
@@ -94,12 +113,14 @@ void PassiveQueue::request(int gateIndex)
         // FIXME this may have bad performance as remove uses linear search
         queue.remove(job);
     }
-    emit(queueLengthSignal, length());
+
 
     job->setQueueCount(job->getQueueCount()+1);
     simtime_t d = simTime() - job->getTimestamp();
     job->setTotalQueueingTime(job->getTotalQueueingTime() + d);
     emit(queueingTimeSignal, d);
+    emit(queueLengthSignal, length());
+    emit(queueLengthU1Signal, lengthU1());
 
     sendJob(job, gateIndex);
 }

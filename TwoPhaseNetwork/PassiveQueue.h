@@ -27,6 +27,7 @@ class QUEUEING_API PassiveQueue : public cSimpleModule, public IPassiveQueue
     private:
 		simsignal_t droppedSignal;
 		simsignal_t queueLengthSignal;
+		simsignal_t queueLengthU1Signal;
 		simsignal_t queueingTimeSignal;
 
         bool fifo;
@@ -47,6 +48,7 @@ class QUEUEING_API PassiveQueue : public cSimpleModule, public IPassiveQueue
         virtual ~PassiveQueue();
         // The following methods are called from IServer:
         virtual int length() override;
+        virtual int lengthU1();
         virtual void request(int gateIndex) override;
 };
 
