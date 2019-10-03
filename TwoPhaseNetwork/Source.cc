@@ -39,9 +39,9 @@ Job *SourceBase::createJob()
     Job *job = new Job(buf);
     job->setKind(type);
     job->setPriority(priority);
-    std::cerr << job->getKind();
+    /*std::cerr << job->getKind();
     std::cerr << job->getPriority();
-    std::cerr << "\n";
+    std::cerr << "\n";*/
     return job;
 }
 
@@ -74,7 +74,10 @@ void Source::handleMessage(cMessage *msg)
         scheduleAt(simTime() + par("interArrivalTime").doubleValue(), msg);
 
         Job *job = createJob();
-        send(job, "out");
+
+            send(job, "out");
+
+
     }
     else {
         // finished
@@ -101,7 +104,8 @@ void SourceOnce::handleMessage(cMessage *msg)
     int n = par("numJobs");
     for (int i = 0; i < n; i++) {
         Job *job = createJob();
-        send(job, "out");
+                    send(job, "out");
+                }
     }
 }
 

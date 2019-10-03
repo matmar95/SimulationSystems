@@ -20,35 +20,47 @@ package org.omnetpp.queueing;
 //
 network FourNodeNetwork
 {
-    @display("bgb=501,312");
+    @display("bgb=464,204");
     submodules:
         Source: Source {
-            @display("p=44,167");
+            @display("p=25,93");
+        }
+        Router: Router {
+            @display("p=117,93");
+            gates:
+                out[2];
         }
         PS: Server {
-            @display("p=194,167");
+            @display("p=199,93");
         }
         SS1: Queue {
-            @display("p=331,97");
+            @display("p=265,28");
         }
         SS2: Queue {
-            @display("p=331,243");
+            @display("p=265,161");
         }
         Classifier: Classifier {
-            @display("p=331,167");
+            @display("p=343,93");
         }
         sink: Sink {
-            @display("p=432,167");
+            @display("p=428,93");
         }
-        Queue: PassiveQueue {
-            @display("p=122,167");
+        QueueU1: PassiveQueue {
+            @display("p=117,28");
         }
+        QueueU2: PassiveQueue {
+            @display("p=117,161");
+        }
+
     connections:
-        Source.out --> Queue.in++;
+        Source.out --> Router.in++;
+        Router.out[0] --> QueueU2.in++;
+        Router.out[1] --> QueueU1.in++;
+        QueueU1.out++ --> PS.in++;
+        QueueU2.out++ --> PS.in++;
         PS.out --> Classifier.in++;
-        SS1.out --> Queue.in++;
-        SS2.out --> Queue.in++;
-        Queue.out++ --> PS.in++;
+        SS1.out --> QueueU1.in++;
+        SS2.out --> QueueU2.in++;
         Classifier.rest --> sink.in++;
         Classifier.out++ --> SS2.in++;
         Classifier.out++ --> SS1.in++;

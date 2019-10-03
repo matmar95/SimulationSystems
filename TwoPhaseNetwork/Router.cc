@@ -15,7 +15,7 @@ Define_Module(Router);
 
 void Router::initialize()
 {
-    std::cerr << "ciao";
+
     const char *algName = par("routingAlgorithm");
     if (strcmp(algName, "random") == 0) {
         routingAlgorithm = ALG_RANDOM;
@@ -38,7 +38,7 @@ void Router::initialize()
 void Router::handleMessage(cMessage *msg)
 {
     Job *job = check_and_cast<Job *>(msg);
-    int jobKind = job ->getKind();
+    int jobKind = job->getPriority();
     std::cerr << jobKind;
     send(msg, "out", jobKind);
      // by default we drop the message
