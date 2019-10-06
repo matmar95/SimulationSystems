@@ -25,9 +25,12 @@ simple Server
              // how the next job will be choosen from the attached queues
         volatile double serviceTimeU1 @unit(s);
         volatile double serviceTimeU2 @unit(s); // service time of a job
+        volatile int exitProbability = default(0);
     gates:
         input in[];
-        output out;
+        output outU1;
+        output outU2;
+        output outSink;
 }
 
 

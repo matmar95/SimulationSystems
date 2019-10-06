@@ -21,6 +21,8 @@ class QUEUEING_API Sink : public cSimpleModule
 {
   private:
 	simsignal_t lifeTimeSignal;
+	simsignal_t lifeTimeU1Signal;
+	simsignal_t lifeTimeU2Signal;
 	simsignal_t totalQueueingTimeSignal;
 	simsignal_t queuesVisitedSignal;
 	simsignal_t totalServiceTimeSignal;

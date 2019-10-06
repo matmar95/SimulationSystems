@@ -30,6 +30,7 @@ simple Source
         double startTime @unit(s) = default(interArrivalTime); // when the module sends out the first job
         double stopTime @unit(s) = default(-1s); // when the module stops the job generation (-1 means no limit)
     gates:
-        output out;
+        output out1;
+        output out2;
 }
 

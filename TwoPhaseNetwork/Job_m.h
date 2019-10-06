@@ -30,12 +30,6 @@
 
 namespace queueing {
 
-class Job;
-} // namespace queueing
-
-
-namespace queueing {
-
 // cplusplus {{
 #include "QueueingDefs.h"
 // }}
@@ -86,13 +80,13 @@ namespace queueing {
 class QUEUEING_API Job_Base : public ::omnetpp::cMessage
 {
   protected:
-    int priority = 0;
-    omnetpp::simtime_t totalQueueingTime = SIMTIME_ZERO;
-    omnetpp::simtime_t totalServiceTime = SIMTIME_ZERO;
-    omnetpp::simtime_t totalDelayTime = SIMTIME_ZERO;
-    int queueCount = 0;
-    int delayCount = 0;
-    int generation = 0;
+    int priority;
+    ::omnetpp::simtime_t totalQueueingTime;
+    ::omnetpp::simtime_t totalServiceTime;
+    ::omnetpp::simtime_t totalDelayTime;
+    int queueCount;
+    int delayCount;
+    int generation;
 
   private:
     void copy(const Job_Base& other);
@@ -115,12 +109,12 @@ class QUEUEING_API Job_Base : public ::omnetpp::cMessage
     // field getter/setter methods
     virtual int getPriority() const;
     virtual void setPriority(int priority);
-    virtual omnetpp::simtime_t getTotalQueueingTime() const;
-    virtual void setTotalQueueingTime(omnetpp::simtime_t totalQueueingTime);
-    virtual omnetpp::simtime_t getTotalServiceTime() const;
-    virtual void setTotalServiceTime(omnetpp::simtime_t totalServiceTime);
-    virtual omnetpp::simtime_t getTotalDelayTime() const;
-    virtual void setTotalDelayTime(omnetpp::simtime_t totalDelayTime);
+    virtual ::omnetpp::simtime_t getTotalQueueingTime() const;
+    virtual void setTotalQueueingTime(::omnetpp::simtime_t totalQueueingTime);
+    virtual ::omnetpp::simtime_t getTotalServiceTime() const;
+    virtual void setTotalServiceTime(::omnetpp::simtime_t totalServiceTime);
+    virtual ::omnetpp::simtime_t getTotalDelayTime() const;
+    virtual void setTotalDelayTime(::omnetpp::simtime_t totalDelayTime);
     virtual int getQueueCount() const;
     virtual void setQueueCount(int queueCount);
     virtual int getDelayCount() const;

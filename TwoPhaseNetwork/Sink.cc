@@ -17,6 +17,8 @@ Define_Module(Sink);
 void Sink::initialize()
 {
     lifeTimeSignal = registerSignal("lifeTime");
+    lifeTimeU1Signal = registerSignal("lifeTimeU1");
+    lifeTimeU2Signal = registerSignal("lifeTimeU2");
     totalQueueingTimeSignal = registerSignal("totalQueueingTime");
     queuesVisitedSignal = registerSignal("queuesVisited");
     totalServiceTimeSignal = registerSignal("totalServiceTime");
@@ -30,6 +32,11 @@ void Sink::handleMessage(cMessage *msg)
 {
     Job *job = check_and_cast<Job *>(msg);
 
+    if(job->getKind()==1){
+        emit(lifeTimeU1Signal, simTime()- job->getCreationTime());
+    }else{
+        emit(lifeTimeU2Signal, simTime()- job->getCreationTime());
+    }
     // gather statistics
     emit(lifeTimeSignal, simTime()- job->getCreationTime());
     emit(totalQueueingTimeSignal, job->getTotalQueueingTime());

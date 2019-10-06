@@ -11,6 +11,7 @@
 #include "Job.h"
 #include "SelectionStrategies.h"
 #include "IPassiveQueue.h"
+#include <iostream>
 
 namespace queueing {
 
@@ -51,7 +52,18 @@ void Server::handleMessage(cMessage *msg)
         ASSERT(allocated);
         simtime_t d = simTime() - endServiceMsg->getSendingTime();
         jobServiced->setTotalServiceTime(jobServiced->getTotalServiceTime() + d);
-        send(jobServiced, "out");
+        int exitProbability = par("exitProbability").intValue();
+        if(exitProbability == 1){
+            int kind = jobServiced->getKind();
+            if (kind==1){
+                send(jobServiced, "outU1");
+            }else{
+                send(jobServiced, "outU2");
+            }
+        }else{
+            send(jobServiced, "outSink");
+        }
+        //send(jobServiced, "out");
         jobServiced = nullptr;
         allocated = false;
         emit(busySignal, false);

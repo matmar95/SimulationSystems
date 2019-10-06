@@ -18,6 +18,8 @@ simple Sink
         @group(Queueing);
         @display("i=block/sink");
         @signal[lifeTime](type="simtime_t");
+        @signal[lifeTimeU1](type="simtime_t");
+        @signal[lifeTimeU2](type="simtime_t");
         @signal[totalQueueingTime](type="simtime_t");
         @signal[totalDelayTime](type="simtime_t");
         @signal[totalServiceTime](type="simtime_t");
@@ -25,6 +27,8 @@ simple Sink
         @signal[delaysVisited](type="long");
         @signal[generation](type="long");
         @statistic[lifeTime](title="lifetime of arrived jobs";unit=s;record=vector,mean,max;interpolationmode=none);
+        @statistic[lifeTimeU1](title="lifetime of arrived jobs U1";unit=s;record=vector,mean,max, min;interpolationmode=none);
+        @statistic[lifeTimeU2](title="lifetime of arrived jobs U2";unit=s;record=vector,mean,max, min;interpolationmode=none);
         @statistic[totalQueueingTime](title="the total time spent in queues by arrived jobs";unit=s;record=vector?,mean,max;interpolationmode=none);
         @statistic[totalDelayTime](title="the total time spent in delay nodes by arrived jobs";unit=s;record=vector?,mean,max;interpolationmode=none);
         @statistic[totalServiceTime](title="the total time spent  by arrived jobs";unit=s;record=vector?,mean,max;interpolationmode=none);

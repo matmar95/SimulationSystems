@@ -25,7 +25,6 @@ O = $(PROJECT_OUTPUT_DIR)/$(CONFIGNAME)/$(PROJECTRELATIVE_PATH)
 
 # Object files for local .cc, .msg and .sm files
 OBJS = \
-    $O/Classifier.o \
     $O/Job.o \
     $O/JobList.o \
     $O/PassiveQueue.o \
@@ -81,9 +80,6 @@ endif
 #------------------------------------------------------------------------------
 # User-supplied makefile fragment(s)
 # >>>
-# inserted from file 'makefrag':
-MSGC:=$(MSGC) --msg6
-
 # <<<
 #------------------------------------------------------------------------------
 

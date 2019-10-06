@@ -20,30 +20,30 @@ package org.omnetpp.queueing;
 //
 network FourNodeNetwork
 {
-    @display("bgb=464,204");
+    @display("bgb=380,205");
     submodules:
         Source: Source {
             @display("p=25,93");
         }
-        Router: Router {
-            @display("p=117,93");
-            gates:
-                out[2];
-        }
+        //Router: Router {
+          //  @display("p=117,93");
+            //gates:
+              //  out[2];
+        //}
         PS: Server {
             @display("p=199,93");
         }
         SS1: Queue {
-            @display("p=265,28");
+            @display("p=281,28");
         }
         SS2: Queue {
-            @display("p=265,161");
+            @display("p=281,161");
         }
-        Classifier: Classifier {
-            @display("p=343,93");
-        }
+        //Classifier: Classifier {
+        //    @display("p=343,93");
+        //}
         sink: Sink {
-            @display("p=428,93");
+            @display("p=343,93");
         }
         QueueU1: PassiveQueue {
             @display("p=117,28");
@@ -53,16 +53,21 @@ network FourNodeNetwork
         }
 
     connections:
-        Source.out --> Router.in++;
-        Router.out[0] --> QueueU2.in++;
-        Router.out[1] --> QueueU1.in++;
+        //Source.out --> Router.in++;
+        //Router.out[0] --> QueueU2.in++;
+        //Router.out[1] --> QueueU1.in++;
+        Source.out1 --> QueueU1.in++;
+        Source.out2 --> QueueU2.in++;
         QueueU1.out++ --> PS.in++;
         QueueU2.out++ --> PS.in++;
-        PS.out --> Classifier.in++;
+        //PS.out --> Classifier.in++;
+        PS.outU1 --> SS1.in++;
+        PS.outU2 --> SS2.in++;
+        PS.outSink --> sink.in++;
         SS1.out --> QueueU1.in++;
         SS2.out --> QueueU2.in++;
-        Classifier.rest --> sink.in++;
-        Classifier.out++ --> SS2.in++;
-        Classifier.out++ --> SS1.in++;
+        //Classifier.rest --> sink.in++;
+        //Classifier.out++ --> SS2.in++;
+        //Classifier.out++ --> SS1.in++;
 
 }

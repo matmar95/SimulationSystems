@@ -28,7 +28,7 @@ void PassiveQueue::initialize()
     queueLengthSignal = registerSignal("queueLength");
     queueLengthU1Signal = registerSignal("queueLengthU1");
     emit(queueLengthSignal, 0);
-    emit(queueLengthU1Signal, 0);
+    //emit(queueLengthU1Signal, 0);
 
     capacity = par("capacity");
     queue.setName("queue");
@@ -60,7 +60,7 @@ void PassiveQueue::handleMessage(cMessage *msg)
         // enqueue if no idle server found
         queue.insert(job);
         emit(queueLengthSignal, length());
-        emit(queueLengthU1Signal, lengthU1());
+        //emit(queueLengthU1Signal, lengthU1());
         job->setQueueCount(job->getQueueCount() + 1);
     }
     else if (length() == 0) {
@@ -91,7 +91,7 @@ int PassiveQueue::lengthU1()
         if( currentJob->getKind() == 1){
             std::cerr << "countU1";
             std::cerr << countU1;
-            countU1 = countU1++;
+            countU1 = countU1 + 1;
             std::cerr << countU1;
         }
     }
@@ -120,7 +120,7 @@ void PassiveQueue::request(int gateIndex)
     job->setTotalQueueingTime(job->getTotalQueueingTime() + d);
     emit(queueingTimeSignal, d);
     emit(queueLengthSignal, length());
-    emit(queueLengthU1Signal, lengthU1());
+    //emit(queueLengthU1Signal, lengthU1());
 
     sendJob(job, gateIndex);
 }

@@ -26,7 +26,6 @@
 
 #include <iostream>
 #include <sstream>
-#include <memory>
 #include "Job_m.h"
 
 namespace omnetpp {
@@ -68,7 +67,7 @@ void doParsimUnpacking(omnetpp::cCommBuffer *buffer, std::list<T,A>& l)
 {
     int n;
     doParsimUnpacking(buffer, n);
-    for (int i = 0; i < n; i++) {
+    for (int i=0; i<n; i++) {
         l.push_back(T());
         doParsimUnpacking(buffer, l.back());
     }
@@ -88,7 +87,7 @@ void doParsimUnpacking(omnetpp::cCommBuffer *buffer, std::set<T,Tr,A>& s)
 {
     int n;
     doParsimUnpacking(buffer, n);
-    for (int i = 0; i < n; i++) {
+    for (int i=0; i<n; i++) {
         T x;
         doParsimUnpacking(buffer, x);
         s.insert(x);
@@ -111,7 +110,7 @@ void doParsimUnpacking(omnetpp::cCommBuffer *buffer, std::map<K,V,Tr,A>& m)
 {
     int n;
     doParsimUnpacking(buffer, n);
-    for (int i = 0; i < n; i++) {
+    for (int i=0; i<n; i++) {
         K k; V v;
         doParsimUnpacking(buffer, k);
         doParsimUnpacking(buffer, v);
@@ -149,39 +148,11 @@ void doParsimUnpacking(omnetpp::cCommBuffer *, T& t)
 
 }  // namespace omnetpp
 
-namespace {
-template <class T> inline
-typename std::enable_if<std::is_polymorphic<T>::value && std::is_base_of<omnetpp::cObject,T>::value, void *>::type
-toVoidPtr(T* t)
-{
-    return (void *)(static_cast<const omnetpp::cObject *>(t));
-}
-
-template <class T> inline
-typename std::enable_if<std::is_polymorphic<T>::value && !std::is_base_of<omnetpp::cObject,T>::value, void *>::type
-toVoidPtr(T* t)
-{
-    return (void *)dynamic_cast<const void *>(t);
-}
-
-template <class T> inline
-typename std::enable_if<!std::is_polymorphic<T>::value, void *>::type
-toVoidPtr(T* t)
-{
-    return (void *)static_cast<const void *>(t);
-}
-
-}
-
 namespace queueing {
 
 // forward
 template<typename T, typename A>
 std::ostream& operator<<(std::ostream& out, const std::vector<T,A>& vec);
-
-// Template rule to generate operator<< for shared_ptr<T>
-template<typename T>
-inline std::ostream& operator<<(std::ostream& out,const std::shared_ptr<T>& t) { return out << t.get(); }
 
 // Template rule which fires if a struct or class doesn't have operator<<
 template<typename T>
@@ -200,15 +171,22 @@ inline std::ostream& operator<<(std::ostream& out, const std::vector<T,A>& vec)
         out << *it;
     }
     out.put('}');
-
+    
     char buf[32];
     sprintf(buf, " (size=%u)", (unsigned int)vec.size());
     out.write(buf, strlen(buf));
     return out;
 }
 
-Job_Base::Job_Base(const char *name, short kind) : ::omnetpp::cMessage(name, kind)
+Job_Base::Job_Base(const char *name, short kind) : ::omnetpp::cMessage(name,kind)
 {
+    this->priority = 0;
+    this->totalQueueingTime = 0;
+    this->totalServiceTime = 0;
+    this->totalDelayTime = 0;
+    this->queueCount = 0;
+    this->delayCount = 0;
+    this->generation = 0;
 }
 
 Job_Base::Job_Base(const Job_Base& other) : ::omnetpp::cMessage(other)
@@ -222,7 +200,7 @@ Job_Base::~Job_Base()
 
 Job_Base& Job_Base::operator=(const Job_Base& other)
 {
-    if (this == &other) return *this;
+    if (this==&other) return *this;
     ::omnetpp::cMessage::operator=(other);
     copy(other);
     return *this;
@@ -273,32 +251,32 @@ void Job_Base::setPriority(int priority)
     this->priority = priority;
 }
 
-omnetpp::simtime_t Job_Base::getTotalQueueingTime() const
+::omnetpp::simtime_t Job_Base::getTotalQueueingTime() const
 {
     return this->totalQueueingTime;
 }
 
-void Job_Base::setTotalQueueingTime(omnetpp::simtime_t totalQueueingTime)
+void Job_Base::setTotalQueueingTime(::omnetpp::simtime_t totalQueueingTime)
 {
     this->totalQueueingTime = totalQueueingTime;
 }
 
-omnetpp::simtime_t Job_Base::getTotalServiceTime() const
+::omnetpp::simtime_t Job_Base::getTotalServiceTime() const
 {
     return this->totalServiceTime;
 }
 
-void Job_Base::setTotalServiceTime(omnetpp::simtime_t totalServiceTime)
+void Job_Base::setTotalServiceTime(::omnetpp::simtime_t totalServiceTime)
 {
     this->totalServiceTime = totalServiceTime;
 }
 
-omnetpp::simtime_t Job_Base::getTotalDelayTime() const
+::omnetpp::simtime_t Job_Base::getTotalDelayTime() const
 {
     return this->totalDelayTime;
 }
 
-void Job_Base::setTotalDelayTime(omnetpp::simtime_t totalDelayTime)
+void Job_Base::setTotalDelayTime(::omnetpp::simtime_t totalDelayTime)
 {
     this->totalDelayTime = totalDelayTime;
 }
@@ -337,15 +315,6 @@ class JobDescriptor : public omnetpp::cClassDescriptor
 {
   private:
     mutable const char **propertynames;
-    enum FieldConstants {
-        FIELD_priority,
-        FIELD_totalQueueingTime,
-        FIELD_totalServiceTime,
-        FIELD_totalDelayTime,
-        FIELD_queueCount,
-        FIELD_delayCount,
-        FIELD_generation,
-    };
   public:
     JobDescriptor();
     virtual ~JobDescriptor();
@@ -400,7 +369,7 @@ const char **JobDescriptor::getPropertyNames() const
 
 const char *JobDescriptor::getProperty(const char *propertyname) const
 {
-    if (!strcmp(propertyname, "customize")) return "true";
+    if (!strcmp(propertyname,"customize")) return "true";
     omnetpp::cClassDescriptor *basedesc = getBaseClassDescriptor();
     return basedesc ? basedesc->getProperty(propertyname) : nullptr;
 }
@@ -420,15 +389,15 @@ unsigned int JobDescriptor::getFieldTypeFlags(int field) const
         field -= basedesc->getFieldCount();
     }
     static unsigned int fieldTypeFlags[] = {
-        FD_ISEDITABLE,    // FIELD_priority
-        0,    // FIELD_totalQueueingTime
-        0,    // FIELD_totalServiceTime
-        0,    // FIELD_totalDelayTime
-        FD_ISEDITABLE,    // FIELD_queueCount
-        FD_ISEDITABLE,    // FIELD_delayCount
-        FD_ISEDITABLE,    // FIELD_generation
+        FD_ISEDITABLE,
+        FD_ISEDITABLE,
+        FD_ISEDITABLE,
+        FD_ISEDITABLE,
+        FD_ISEDITABLE,
+        FD_ISEDITABLE,
+        FD_ISEDITABLE,
     };
-    return (field >= 0 && field < 7) ? fieldTypeFlags[field] : 0;
+    return (field>=0 && field<7) ? fieldTypeFlags[field] : 0;
 }
 
 const char *JobDescriptor::getFieldName(int field) const
@@ -448,20 +417,20 @@ const char *JobDescriptor::getFieldName(int field) const
         "delayCount",
         "generation",
     };
-    return (field >= 0 && field < 7) ? fieldNames[field] : nullptr;
+    return (field>=0 && field<7) ? fieldNames[field] : nullptr;
 }
 
 int JobDescriptor::findField(const char *fieldName) const
 {
     omnetpp::cClassDescriptor *basedesc = getBaseClassDescriptor();
     int base = basedesc ? basedesc->getFieldCount() : 0;
-    if (fieldName[0] == 'p' && strcmp(fieldName, "priority") == 0) return base+0;
-    if (fieldName[0] == 't' && strcmp(fieldName, "totalQueueingTime") == 0) return base+1;
-    if (fieldName[0] == 't' && strcmp(fieldName, "totalServiceTime") == 0) return base+2;
-    if (fieldName[0] == 't' && strcmp(fieldName, "totalDelayTime") == 0) return base+3;
-    if (fieldName[0] == 'q' && strcmp(fieldName, "queueCount") == 0) return base+4;
-    if (fieldName[0] == 'd' && strcmp(fieldName, "delayCount") == 0) return base+5;
-    if (fieldName[0] == 'g' && strcmp(fieldName, "generation") == 0) return base+6;
+    if (fieldName[0]=='p' && strcmp(fieldName, "priority")==0) return base+0;
+    if (fieldName[0]=='t' && strcmp(fieldName, "totalQueueingTime")==0) return base+1;
+    if (fieldName[0]=='t' && strcmp(fieldName, "totalServiceTime")==0) return base+2;
+    if (fieldName[0]=='t' && strcmp(fieldName, "totalDelayTime")==0) return base+3;
+    if (fieldName[0]=='q' && strcmp(fieldName, "queueCount")==0) return base+4;
+    if (fieldName[0]=='d' && strcmp(fieldName, "delayCount")==0) return base+5;
+    if (fieldName[0]=='g' && strcmp(fieldName, "generation")==0) return base+6;
     return basedesc ? basedesc->findField(fieldName) : -1;
 }
 
@@ -474,15 +443,15 @@ const char *JobDescriptor::getFieldTypeString(int field) const
         field -= basedesc->getFieldCount();
     }
     static const char *fieldTypeStrings[] = {
-        "int",    // FIELD_priority
-        "omnetpp::simtime_t",    // FIELD_totalQueueingTime
-        "omnetpp::simtime_t",    // FIELD_totalServiceTime
-        "omnetpp::simtime_t",    // FIELD_totalDelayTime
-        "int",    // FIELD_queueCount
-        "int",    // FIELD_delayCount
-        "int",    // FIELD_generation
+        "int",
+        "simtime_t",
+        "simtime_t",
+        "simtime_t",
+        "int",
+        "int",
+        "int",
     };
-    return (field >= 0 && field < 7) ? fieldTypeStrings[field] : nullptr;
+    return (field>=0 && field<7) ? fieldTypeStrings[field] : nullptr;
 }
 
 const char **JobDescriptor::getFieldPropertyNames(int field) const
@@ -549,13 +518,13 @@ std::string JobDescriptor::getFieldValueAsString(void *object, int field, int i)
     }
     Job_Base *pp = (Job_Base *)object; (void)pp;
     switch (field) {
-        case FIELD_priority: return long2string(pp->getPriority());
-        case FIELD_totalQueueingTime: return simtime2string(pp->getTotalQueueingTime());
-        case FIELD_totalServiceTime: return simtime2string(pp->getTotalServiceTime());
-        case FIELD_totalDelayTime: return simtime2string(pp->getTotalDelayTime());
-        case FIELD_queueCount: return long2string(pp->getQueueCount());
-        case FIELD_delayCount: return long2string(pp->getDelayCount());
-        case FIELD_generation: return long2string(pp->getGeneration());
+        case 0: return long2string(pp->getPriority());
+        case 1: return simtime2string(pp->getTotalQueueingTime());
+        case 2: return simtime2string(pp->getTotalServiceTime());
+        case 3: return simtime2string(pp->getTotalDelayTime());
+        case 4: return long2string(pp->getQueueCount());
+        case 5: return long2string(pp->getDelayCount());
+        case 6: return long2string(pp->getGeneration());
         default: return "";
     }
 }
@@ -570,10 +539,13 @@ bool JobDescriptor::setFieldValueAsString(void *object, int field, int i, const 
     }
     Job_Base *pp = (Job_Base *)object; (void)pp;
     switch (field) {
-        case FIELD_priority: pp->setPriority(string2long(value)); return true;
-        case FIELD_queueCount: pp->setQueueCount(string2long(value)); return true;
-        case FIELD_delayCount: pp->setDelayCount(string2long(value)); return true;
-        case FIELD_generation: pp->setGeneration(string2long(value)); return true;
+        case 0: pp->setPriority(string2long(value)); return true;
+        case 1: pp->setTotalQueueingTime(string2simtime(value)); return true;
+        case 2: pp->setTotalServiceTime(string2simtime(value)); return true;
+        case 3: pp->setTotalDelayTime(string2simtime(value)); return true;
+        case 4: pp->setQueueCount(string2long(value)); return true;
+        case 5: pp->setDelayCount(string2long(value)); return true;
+        case 6: pp->setGeneration(string2long(value)); return true;
         default: return false;
     }
 }
