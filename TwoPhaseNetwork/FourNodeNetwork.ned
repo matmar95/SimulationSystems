@@ -18,7 +18,7 @@ package org.omnetpp.queueing;
 //
 // TODO auto-generated type
 //
-network FourNodeNetwork
+network ResponseTimeNetwork
 {
     @display("bgb=380,205");
     submodules:

@@ -1,12 +1,12 @@
 #
-# OMNeT++/OMNEST Makefile for $(LIB_PREFIX)TwoPhaseNetwork
+# OMNeT++/OMNEST Makefile for $(LIB_PREFIX)ResponseTimeNetwork
 #
 # This file was generated with the command:
 #  opp_makemake --make-so -f -pQUEUEING -S -I.
 #
 
 # Name of target to be created (-o option)
-TARGET = $(LIB_PREFIX)TwoPhaseNetwork$(D)$(SHARED_LIB_SUFFIX)
+TARGET = $(LIB_PREFIX)ResponseTimeNetwork$(D)$(SHARED_LIB_SUFFIX)
 TARGET_DIR = .
 
 # C++ include paths (with -I)
