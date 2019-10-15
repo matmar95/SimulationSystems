@@ -23,12 +23,7 @@ class QUEUEING_API Sink : public cSimpleModule
 	simsignal_t lifeTimeSignal;
 	simsignal_t lifeTimeU1Signal;
 	simsignal_t lifeTimeU2Signal;
-	simsignal_t totalQueueingTimeSignal;
-	simsignal_t queuesVisitedSignal;
-	simsignal_t totalServiceTimeSignal;
-	simsignal_t totalDelayTimeSignal;
-	simsignal_t delaysVisitedSignal;
-	simsignal_t generationSignal;
+    //simsignal_t totalServiceTimeSignal;
     bool keepJobs;
 
   protected:
