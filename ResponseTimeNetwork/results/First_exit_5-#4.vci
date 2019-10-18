@@ -1,0 +1,57 @@
+file 956762 1571312608                                          
+version 2
+run First_exit_5-4-20191017-13:43:28-1831
+attr configname First_exit_5
+attr datetime 20191017-13:43:28
+attr experiment First_exit_5
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network ResponseTimeNetwork
+attr processid 1831
+attr repetition 4
+attr replication #4
+attr resultdir results
+attr runnumber 4
+attr seedset 4
+param **.Source.interArrivalTime exponential(4s)
+param **.jobPriority bernoulli(0.4)
+param **.PS.serviceTimeU1 "uniform(0.4s, 1.0s)"
+param **.PS.serviceTimeU2 "uniform(1s, 1.2s)"
+param **.SS1.serviceTime exponential(0.4s)
+param **.SS2.serviceTime exponential(0.8s)
+param **.PS.exitProbability bernoulli(0.5)
+
+vector 0 ResponseTimeNetwork.SS1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 1 ResponseTimeNetwork.SS2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 2 ResponseTimeNetwork.QueueU1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 3 ResponseTimeNetwork.QueueU2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 4 ResponseTimeNetwork.sink lifeTimeU2:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs U2, vector"
+attr unit s
+vector 5 ResponseTimeNetwork.sink lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+vector 6 ResponseTimeNetwork.sink lifeTimeU1:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs U1, vector"
+attr unit s
+0	1625 3374 0 70344 0 28659.501259423103 119 0 2 61 63
+1	4999 20846 0 73711 0 29940.088334170762 733 0 4 436 530
+2	25845 136955 0 73886 0 29992.265009906183 4827 0 4 2927 3609
+3	162800 182519 0 73851 0 29982.994847088127 6435 0 6 5223 8729
+4	345319 182072 5 73875 14.152226471731 29989.301049346576 4408 0.400773233222 27.813999325774 12678.654030354 78711.808866954
+5	527391 305721 5 73895 14.152226471731 29995.549887374317 7405 0.400773233222 27.813999325774 19377.364882966 105727.50850862
+6	833112 123649 15 73895 31.110016345564 29995.549887374317 2997 0.402147232229 18.155566554392 6698.7108526119 27015.699641667
+

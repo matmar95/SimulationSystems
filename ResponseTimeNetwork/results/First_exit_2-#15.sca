@@ -1,0 +1,149 @@
+version 2
+run First_exit_2-15-20191017-13:43:30-1845
+attr configname First_exit_2
+attr datetime 20191017-13:43:30
+attr experiment First_exit_2
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network ResponseTimeNetwork
+attr processid 1845
+attr repetition 15
+attr replication #15
+attr resultdir results
+attr runnumber 15
+attr seedset 15
+param **.Source.interArrivalTime exponential(4s)
+param **.jobPriority bernoulli(0.4)
+param **.PS.serviceTimeU1 "uniform(0.4s, 1.0s)"
+param **.PS.serviceTimeU2 "uniform(1s, 1.2s)"
+param **.SS1.serviceTime exponential(0.4s)
+param **.SS2.serviceTime exponential(0.8s)
+param **.PS.exitProbability bernoulli(0.2)
+
+scalar ResponseTimeNetwork.Source created:last 7522
+attr interpolationmode none
+attr title "the number of jobs created, last"
+scalar ResponseTimeNetwork.PS busy:timeavg 0.21903926183244
+attr interpolationmode sample-hold
+attr title "server busy state, timeavg"
+scalar ResponseTimeNetwork.SS1 queueingTime:mean 0.00095943492307616
+attr interpolationmode none
+attr title "queueing time at dequeue, mean"
+attr unit s
+scalar ResponseTimeNetwork.SS1 queueingTime:max 0.529050734555
+attr interpolationmode none
+attr title "queueing time at dequeue, max"
+attr unit s
+scalar ResponseTimeNetwork.SS1 queueLength:timeavg 2.26746453487e-05
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar ResponseTimeNetwork.SS1 queueLength:max 1
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar ResponseTimeNetwork.SS1 queueLength:mean 0.4
+attr interpolationmode sample-hold
+attr title "queue length, mean"
+scalar ResponseTimeNetwork.SS1 dropped:count 0
+attr interpolationmode none
+attr title "drop event, count"
+scalar ResponseTimeNetwork.SS1 busy:timeavg 0.0088808823372478
+attr interpolationmode sample-hold
+attr title "server busy state, timeavg"
+scalar ResponseTimeNetwork.SS2 queueingTime:mean 0.011792888930753
+attr interpolationmode none
+attr title "queueing time at dequeue, mean"
+attr unit s
+scalar ResponseTimeNetwork.SS2 queueingTime:max 2.405582742412
+attr interpolationmode none
+attr title "queueing time at dequeue, max"
+attr unit s
+scalar ResponseTimeNetwork.SS2 queueLength:timeavg 0.00045913647570397
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar ResponseTimeNetwork.SS2 queueLength:max 1
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar ResponseTimeNetwork.SS2 queueLength:mean 0.48837209302326
+attr interpolationmode sample-hold
+attr title "queue length, mean"
+scalar ResponseTimeNetwork.SS2 dropped:count 0
+attr interpolationmode none
+attr title "drop event, count"
+scalar ResponseTimeNetwork.SS2 busy:timeavg 0.030454385725078
+attr interpolationmode sample-hold
+attr title "server busy state, timeavg"
+scalar ResponseTimeNetwork.sink lifeTimeU2:mean 1.2364608409062
+attr interpolationmode none
+attr title "lifetime of arrived jobs U2, mean"
+attr unit s
+scalar ResponseTimeNetwork.sink lifeTimeU2:max 11.231422958496
+attr interpolationmode none
+attr title "lifetime of arrived jobs U2, max"
+attr unit s
+scalar ResponseTimeNetwork.sink lifeTimeU2:min 0.400040364033
+attr interpolationmode none
+attr title "lifetime of arrived jobs U2, min"
+attr unit s
+scalar ResponseTimeNetwork.sink lifeTimeU1:mean 1.0744843784016
+attr interpolationmode none
+attr title "lifetime of arrived jobs U1, mean"
+attr unit s
+scalar ResponseTimeNetwork.sink lifeTimeU1:max 8.304603499493
+attr interpolationmode none
+attr title "lifetime of arrived jobs U1, max"
+attr unit s
+scalar ResponseTimeNetwork.sink lifeTimeU1:min 0.400572062097
+attr interpolationmode none
+attr title "lifetime of arrived jobs U1, min"
+attr unit s
+scalar ResponseTimeNetwork.sink lifeTime:mean 1.1712912124607
+attr interpolationmode none
+attr title "lifetime of arrived jobs, mean"
+attr unit s
+scalar ResponseTimeNetwork.sink lifeTime:max 11.231422958496
+attr interpolationmode none
+attr title "lifetime of arrived jobs, max"
+attr unit s
+scalar ResponseTimeNetwork.QueueU1 queueingTime:mean 0.43501143965333
+attr interpolationmode none
+attr title "queueing time at dequeue, mean"
+attr unit s
+scalar ResponseTimeNetwork.QueueU1 queueingTime:max 2.053333449756
+attr interpolationmode none
+attr title "queueing time at dequeue, max"
+attr unit s
+scalar ResponseTimeNetwork.QueueU1 queueLength:timeavg 0.012629832131268
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar ResponseTimeNetwork.QueueU1 queueLength:max 3
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar ResponseTimeNetwork.QueueU1 queueLength:mean 0.55593803786575
+attr interpolationmode sample-hold
+attr title "queue length, mean"
+scalar ResponseTimeNetwork.QueueU1 dropped:count 0
+attr interpolationmode none
+attr title "drop event, count"
+scalar ResponseTimeNetwork.QueueU2 queueingTime:mean 0.54391270368175
+attr interpolationmode none
+attr title "queueing time at dequeue, mean"
+attr unit s
+scalar ResponseTimeNetwork.QueueU2 queueingTime:max 4.688395488852
+attr interpolationmode none
+attr title "queueing time at dequeue, max"
+attr unit s
+scalar ResponseTimeNetwork.QueueU2 queueLength:timeavg 0.022209768733672
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar ResponseTimeNetwork.QueueU2 queueLength:max 3
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar ResponseTimeNetwork.QueueU2 queueLength:mean 0.60261117911057
+attr interpolationmode sample-hold
+attr title "queue length, mean"
+scalar ResponseTimeNetwork.QueueU2 dropped:count 0
+attr interpolationmode none
+attr title "drop event, count"
+

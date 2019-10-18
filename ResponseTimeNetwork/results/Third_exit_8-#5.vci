@@ -1,0 +1,58 @@
+file 1919121 1571312665                                         
+version 2
+run Third_exit_8-5-20191017-13:44:25-2040
+attr configname Third_exit_8
+attr datetime 20191017-13:44:25
+attr experiment Third_exit_8
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network ResponseTimeNetwork
+attr processid 2040
+attr repetition 5
+attr replication #5
+attr resultdir results
+attr runnumber 5
+attr seedset 5
+param **.Source.interArrivalTime exponential(6s)
+param **.jobPriority bernoulli(0.8)
+param **.PS.serviceTimeU1 "uniform(1.2s, 2.0s)"
+param **.PS.serviceTimeU2 "uniform(2.4s, 2.8s)"
+param **.SS1.serviceTime exponential(1.4s)
+param **.SS2.serviceTime exponential(2s)
+param **.PS.exitProbability bernoulli(0.8)
+
+vector 0 ResponseTimeNetwork.SS1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 1 ResponseTimeNetwork.SS2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 2 ResponseTimeNetwork.QueueU1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 3 ResponseTimeNetwork.QueueU2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 4 ResponseTimeNetwork.sink lifeTimeU2:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs U2, vector"
+attr unit s
+vector 5 ResponseTimeNetwork.sink lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+vector 6 ResponseTimeNetwork.sink lifeTimeU1:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs U1, vector"
+attr unit s
+2	1625 961498 0 83882 0 26259.706880618966 32768 0 105 2212902 162452520
+0	963123 461788 0 96014 0 29999.900129985415 16235 0 15 28511 100357
+1	1424911 889 0 479 0 165.192945513492 37 0 3 34 54
+2	1425800 142963 83883 96013 26260.018273514305 29999.900129985415 4760 44 115 321018 23386840
+3	1568763 32523 0 95939 0 29975.943861565525 1090 0 1007 507697 340890157
+4	1601286 265 24 829 7.981328058284 274.29304501249 7 6.475208192132 141.02772165423 526.67844888508 54053.445095162
+5	1601551 158917 24 95944 7.981328058284 29978.190127821244 3757 2.271056825222 3604.3946683579 2030790.5607252 2087756864.1302
+6	1760468 158652 27 95944 9.331505039189 29978.190127821244 3750 2.271056825222 3604.3946683579 2030263.8822763 2087702810.6851
+

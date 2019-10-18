@@ -1,0 +1,53 @@
+file 1947746 1571312669                                         
+version 2
+run Third_exit_8-17-20191017-13:44:29-2052
+attr configname Third_exit_8
+attr datetime 20191017-13:44:29
+attr experiment Third_exit_8
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network ResponseTimeNetwork
+attr processid 2052
+attr repetition 17
+attr replication #17
+attr resultdir results
+attr runnumber 17
+attr seedset 17
+param **.Source.interArrivalTime exponential(6s)
+param **.jobPriority bernoulli(0.8)
+param **.PS.serviceTimeU1 "uniform(1.2s, 2.0s)"
+param **.PS.serviceTimeU2 "uniform(2.4s, 2.8s)"
+param **.SS1.serviceTime exponential(1.4s)
+param **.SS2.serviceTime exponential(2s)
+param **.PS.exitProbability bernoulli(0.8)
+
+vector 0 ResponseTimeNetwork.SS1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 1 ResponseTimeNetwork.SS2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 2 ResponseTimeNetwork.QueueU1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 3 ResponseTimeNetwork.QueueU2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 4 ResponseTimeNetwork.sink lifeTimeU1:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs U1, vector"
+attr unit s
+vector 5 ResponseTimeNetwork.sink lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+2	1485 989259 0 83399 0 25802.09585103634 32768 0 519 8842192 2862461160
+0	990744 458668 0 96810 0 29999.377317369362 16160 0 12 26690 87780
+1	1449412 8 0 0 0 0 1 0 0 0 0
+2	1449420 162334 83403 96809 25803.127055115977 29999.377317369362 5256 509 555 2774632 1465297916
+3	1611754 30369 0 96808 0 29998.583769301657 1003 0 998 498509 331835525
+4	1642123 152811 119 96797 35.836459431453 29995.147764283424 3611 3.39371985151 16902.077918293 7498727.8401843 30116805863.227
+5	1794934 152811 119 96797 35.836459431453 29995.147764283424 3611 3.39371985151 16902.077918293 7498727.8401843 30116805863.227
+

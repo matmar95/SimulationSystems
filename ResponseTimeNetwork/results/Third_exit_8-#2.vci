@@ -1,0 +1,58 @@
+file 1935896 1571312664                                         
+version 2
+run Third_exit_8-2-20191017-13:44:24-2037
+attr configname Third_exit_8
+attr datetime 20191017-13:44:24
+attr experiment Third_exit_8
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network ResponseTimeNetwork
+attr processid 2037
+attr repetition 2
+attr replication #2
+attr resultdir results
+attr runnumber 2
+attr seedset 2
+param **.Source.interArrivalTime exponential(6s)
+param **.jobPriority bernoulli(0.8)
+param **.PS.serviceTimeU1 "uniform(1.2s, 2.0s)"
+param **.PS.serviceTimeU2 "uniform(2.4s, 2.8s)"
+param **.SS1.serviceTime exponential(1.4s)
+param **.SS2.serviceTime exponential(2s)
+param **.PS.exitProbability bernoulli(0.8)
+
+vector 0 ResponseTimeNetwork.SS1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 1 ResponseTimeNetwork.SS2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 2 ResponseTimeNetwork.QueueU1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 3 ResponseTimeNetwork.QueueU2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 4 ResponseTimeNetwork.sink lifeTimeU1:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs U1, vector"
+attr unit s
+vector 5 ResponseTimeNetwork.sink lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+vector 6 ResponseTimeNetwork.sink lifeTimeU2:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs U2, vector"
+attr unit s
+2	1625 986178 0 83721 0 26078.955709764556 32768 0 246 4861382 868738068
+0	987803 443407 0 96242 0 29989.14805360413 15605 0 15 25528 85274
+1	1431210 108 0 356 0 123.875898372078 5 0 1 2 2
+2	1431318 151442 83725 96275 26079.187871101124 29999.3423501554 4903 183 242 1019711 212879175
+3	1582760 32337 0 96213 0 29979.935878772265 1075 0 1036 537209 371181793
+4	1615097 160248 118 96262 37.859737963224 29995.219970267271 3787 1.784625110697 9911.9563537529 4440462.1860739 10650176875.604
+5	1775345 160399 118 96262 37.859737963224 29995.219970267271 3791 1.784625110697 9911.9563537529 4440614.9317148 10650183537.923
+6	1935744 151 156 360 50.302962933846 125.21726810045 4 14.22925362601 51.298916579509 152.74564092204 6662.3191626883
+

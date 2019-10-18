@@ -1,0 +1,58 @@
+file 3690677 1571312615                                         
+version 2
+run First_exit_9-1-20191017-13:43:34-1868
+attr configname First_exit_9
+attr datetime 20191017-13:43:34
+attr experiment First_exit_9
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network ResponseTimeNetwork
+attr processid 1868
+attr repetition 1
+attr replication #1
+attr resultdir results
+attr runnumber 1
+attr seedset 1
+param **.Source.interArrivalTime exponential(4s)
+param **.jobPriority bernoulli(0.4)
+param **.PS.serviceTimeU1 "uniform(0.4s, 1.0s)"
+param **.PS.serviceTimeU2 "uniform(1s, 1.2s)"
+param **.SS1.serviceTime exponential(0.4s)
+param **.SS2.serviceTime exponential(0.8s)
+param **.PS.exitProbability bernoulli(0.9)
+
+vector 0 ResponseTimeNetwork.SS1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 1 ResponseTimeNetwork.SS2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 2 ResponseTimeNetwork.QueueU1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 3 ResponseTimeNetwork.QueueU2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 4 ResponseTimeNetwork.sink lifeTimeU2:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs U2, vector"
+attr unit s
+vector 5 ResponseTimeNetwork.sink lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+vector 6 ResponseTimeNetwork.sink lifeTimeU1:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs U1, vector"
+attr unit s
+2	1625 930810 0 121780 0 16577.671710285042 32768 0 14 72354 346412
+0	932435 316540 0 220913 0 29997.483367228402 10851 0 5 7987 11645
+1	1248975 359536 0 220531 0 29947.831659320654 12421 0 41 42456 402930
+2	1608511 834879 121783 220925 16578.086177919582 29999.770213910798 27906 0 16 77591 423857
+3	2443390 892752 0 220838 0 29987.081193279251 28356 0 3351 43831342 95724629270
+4	3336142 49739 10 220279 3.809044127892 29912.838379267925 1164 1.650620821845 28602.425762637 7811089.479624 92210994731.688
+5	3385881 177267 10 220918 3.809044127892 29998.343645166746 4155 0.515283346539 28602.425762637 7900714.8469843 92217467933.252
+6	3563148 127528 166 220918 46.758862154496 29998.343645166746 2991 0.515283346539 448.80872485196 89625.367360232 6473201.5641662
+

@@ -1,0 +1,57 @@
+file 544997 1571312653                                          
+version 2
+run Third_exit_2-11-20191017-13:44:13-2001
+attr configname Third_exit_2
+attr datetime 20191017-13:44:13
+attr experiment Third_exit_2
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network ResponseTimeNetwork
+attr processid 2001
+attr repetition 11
+attr replication #11
+attr resultdir results
+attr runnumber 11
+attr seedset 11
+param **.Source.interArrivalTime exponential(6s)
+param **.jobPriority bernoulli(0.8)
+param **.PS.serviceTimeU1 "uniform(1.2s, 2.0s)"
+param **.PS.serviceTimeU2 "uniform(2.4s, 2.8s)"
+param **.SS1.serviceTime exponential(1.4s)
+param **.SS2.serviceTime exponential(2s)
+param **.PS.exitProbability bernoulli(0.2)
+
+vector 0 ResponseTimeNetwork.SS1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 1 ResponseTimeNetwork.SS2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 2 ResponseTimeNetwork.QueueU1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 3 ResponseTimeNetwork.QueueU2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 4 ResponseTimeNetwork.sink lifeTimeU1:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs U1, vector"
+attr unit s
+vector 5 ResponseTimeNetwork.sink lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+vector 6 ResponseTimeNetwork.sink lifeTimeU2:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs U2, vector"
+attr unit s
+0	1630 2540 0 30431 0 29029.197106538792 91 0 2 51 57
+1	4170 170 0 8174 0 7931.264659722685 7 0 1 3 3
+2	4340 101050 0 31561 0 29969.273278525125 3589 0 4 2664 3818
+3	105390 24494 0 31531 0 29951.844138145722 871 0 3 523 619
+4	129884 166947 7 31585 2.92445558348 29996.718294320707 4065 1.200076590478 23.356521026156 11956.318608865 58844.413593001
+5	296831 207556 7 31585 2.92445558348 29996.718294320707 5052 1.200076590478 31.838094907161 15238.857143189 80484.655268784
+6	504387 40609 22 31575 8.004995295164 29986.592287588593 987 1.200518801436 31.838094907161 3282.5385343236 21640.241675782
+

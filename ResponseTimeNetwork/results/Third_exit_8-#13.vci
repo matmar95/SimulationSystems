@@ -1,0 +1,58 @@
+file 1927757 1571312667                                         
+version 2
+run Third_exit_8-13-20191017-13:44:27-2048
+attr configname Third_exit_8
+attr datetime 20191017-13:44:27
+attr experiment Third_exit_8
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network ResponseTimeNetwork
+attr processid 2048
+attr repetition 13
+attr replication #13
+attr resultdir results
+attr runnumber 13
+attr seedset 13
+param **.Source.interArrivalTime exponential(6s)
+param **.jobPriority bernoulli(0.8)
+param **.PS.serviceTimeU1 "uniform(1.2s, 2.0s)"
+param **.PS.serviceTimeU2 "uniform(2.4s, 2.8s)"
+param **.SS1.serviceTime exponential(1.4s)
+param **.SS2.serviceTime exponential(2s)
+param **.PS.exitProbability bernoulli(0.8)
+
+vector 0 ResponseTimeNetwork.SS1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 1 ResponseTimeNetwork.SS2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 2 ResponseTimeNetwork.QueueU1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 3 ResponseTimeNetwork.QueueU2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 4 ResponseTimeNetwork.sink lifeTimeU1:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs U1, vector"
+attr unit s
+vector 5 ResponseTimeNetwork.sink lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+vector 6 ResponseTimeNetwork.sink lifeTimeU2:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs U2, vector"
+attr unit s
+2	1630 976098 0 83670 0 26151.924755518887 32768 0 200 3332120 485961360
+0	977728 451123 0 95982 0 29999.293663557349 15882 0 11 25227 75781
+1	1428851 60 0 1483 0 493.249594682855 3 0 1 1 1
+2	1428911 148960 83671 95983 26153.335074063831 29999.293663557349 4823 168 210 940425 183616651
+3	1577871 31201 0 95968 0 29994.239621295402 1031 0 1006 507211 339900655
+4	1609072 159143 5 95965 10.909977011987 29993.244326253471 3764 1.884573008542 8140.4139285929 3211788.8358005 6404465251.4297
+5	1768215 159342 5 95965 10.909977011987 29993.244326253471 3769 1.343322782405 8140.4139285929 3216450.4530532 6409901666.5212
+6	1927557 199 10 4725 15.974640004179 1501.046695046872 5 1.343322782405 1228.1817622182 4661.617252649 5436415.0915434
+

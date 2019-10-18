@@ -1,0 +1,57 @@
+file 971980 1571312607                                          
+version 2
+run First_exit_5-0-20191017-13:43:27-1819
+attr configname First_exit_5
+attr datetime 20191017-13:43:27
+attr experiment First_exit_5
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network ResponseTimeNetwork
+attr processid 1819
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param **.Source.interArrivalTime exponential(4s)
+param **.jobPriority bernoulli(0.4)
+param **.PS.serviceTimeU1 "uniform(0.4s, 1.0s)"
+param **.PS.serviceTimeU2 "uniform(1s, 1.2s)"
+param **.SS1.serviceTime exponential(0.4s)
+param **.SS2.serviceTime exponential(0.8s)
+param **.PS.exitProbability bernoulli(0.5)
+
+vector 0 ResponseTimeNetwork.SS1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 1 ResponseTimeNetwork.SS2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 2 ResponseTimeNetwork.QueueU1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 3 ResponseTimeNetwork.QueueU2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 4 ResponseTimeNetwork.sink lifeTimeU2:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs U2, vector"
+attr unit s
+vector 5 ResponseTimeNetwork.sink lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+vector 6 ResponseTimeNetwork.sink lifeTimeU1:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs U1, vector"
+attr unit s
+0	1625 4106 0 74267 0 29917.606963218877 145 0 1 72 72
+1	5731 26069 0 74051 0 29832.446767693735 919 0 3 611 819
+2	31800 136818 0 74436 0 29997.3652049758 4817 0 4 2964 3620
+3	168618 186047 0 74336 0 29933.011019249419 6555 0 6 5553 9409
+4	354665 181342 5 74437 4.090057464717 29997.3652049758 4391 0.400881405035 31.341190305115 13091.812058312 87186.085064961
+5	536007 308657 5 74437 4.090057464717 29997.3652049758 7475 0.400090225181 31.341190305115 19845.093869462 114877.0176242
+6	844664 127315 50 74420 22.489100178527 29992.740141344881 3084 0.400090225181 17.556476052083 6753.2818111498 27690.932559241
+

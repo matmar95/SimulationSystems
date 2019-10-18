@@ -1,0 +1,58 @@
+file 3324981 1571312615                                         
+version 2
+run First_exit_8-9-20191017-13:43:35-1870
+attr configname First_exit_8
+attr datetime 20191017-13:43:35
+attr experiment First_exit_8
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network ResponseTimeNetwork
+attr processid 1870
+attr repetition 9
+attr replication #9
+attr resultdir results
+attr runnumber 9
+attr seedset 9
+param **.Source.interArrivalTime exponential(4s)
+param **.jobPriority bernoulli(0.4)
+param **.PS.serviceTimeU1 "uniform(0.4s, 1.0s)"
+param **.PS.serviceTimeU2 "uniform(1s, 1.2s)"
+param **.SS1.serviceTime exponential(0.4s)
+param **.SS2.serviceTime exponential(0.8s)
+param **.PS.exitProbability bernoulli(0.8)
+
+vector 0 ResponseTimeNetwork.SS1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 1 ResponseTimeNetwork.SS2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 2 ResponseTimeNetwork.QueueU1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 3 ResponseTimeNetwork.QueueU2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 4 ResponseTimeNetwork.sink lifeTimeU1:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs U1, vector"
+attr unit s
+vector 5 ResponseTimeNetwork.sink lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+vector 6 ResponseTimeNetwork.sink lifeTimeU2:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs U2, vector"
+attr unit s
+3	1625 954303 0 150218 0 23090.894717149202 32768 0 40 322802 5906668
+0	955928 69373 0 192854 0 29943.120841929603 2401 0 6 1552 2152
+1	1025301 540572 0 192991 0 29975.121633767264 18649 0 12 32232 110556
+2	1565873 833705 0 193086 0 29999.922012897091 28845 0 7 24750 42538
+3	2399578 280570 150220 192996 23090.954483246369 29976.057588987492 9301 0 33 65124 886522
+4	2680148 126672 52 193075 7.431661799934 29993.78159073488 3006 0.431467360514 89.576044412533 26246.063751347 475338.0541931
+5	2806820 322416 52 193075 7.431661799934 29993.78159073488 7598 0.406856643641 937.045931167 318865.33964416 55592861.722606
+6	3129236 195744 80 193052 13.399664773865 29988.012300131469 4592 0.406856643641 937.045931167 292619.27589281 55117523.668413
+

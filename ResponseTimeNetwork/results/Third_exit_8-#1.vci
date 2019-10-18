@@ -1,0 +1,58 @@
+file 1923742 1571312664                                         
+version 2
+run Third_exit_8-1-20191017-13:44:23-2036
+attr configname Third_exit_8
+attr datetime 20191017-13:44:23
+attr experiment Third_exit_8
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network ResponseTimeNetwork
+attr processid 2036
+attr repetition 1
+attr replication #1
+attr resultdir results
+attr runnumber 1
+attr seedset 1
+param **.Source.interArrivalTime exponential(6s)
+param **.jobPriority bernoulli(0.8)
+param **.PS.serviceTimeU1 "uniform(1.2s, 2.0s)"
+param **.PS.serviceTimeU2 "uniform(2.4s, 2.8s)"
+param **.SS1.serviceTime exponential(1.4s)
+param **.SS2.serviceTime exponential(2s)
+param **.PS.exitProbability bernoulli(0.8)
+
+vector 0 ResponseTimeNetwork.SS1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 1 ResponseTimeNetwork.SS2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 2 ResponseTimeNetwork.QueueU1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 3 ResponseTimeNetwork.QueueU2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 4 ResponseTimeNetwork.sink lifeTimeU1:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs U1, vector"
+attr unit s
+vector 5 ResponseTimeNetwork.sink lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+vector 6 ResponseTimeNetwork.sink lifeTimeU2:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs U2, vector"
+attr unit s
+2	1625 977075 0 83759 0 26134.378816200135 32768 0 205 3356482 454295964
+0	978700 442901 0 96177 0 29999.876232230114 15573 0 12 24498 75086
+1	1421601 170 0 4092 0 1318.222122598993 7 0 1 3 3
+2	1421771 150775 83763 96178 26134.867251494523 29999.876232230114 4883 166 239 983631 200288369
+3	1572546 31717 0 96014 0 29949.00348102193 1053 0 994 496550 327944690
+4	1604263 159494 10 96164 6.817498915061 29995.021945126613 3772 1.635234764715 9706.4902354648 3177508.8815757 6248246476.6742
+5	1763757 159739 10 96164 6.817498915061 29995.021945126613 3778 1.635234764715 9706.4902354648 3182102.3260599 6251782134.666
+6	1923496 245 4294 5362 1383.497089030697 1725.538720966979 6 704.39292991961 850.06714524208 4593.4444842731 3535657.9917768
+

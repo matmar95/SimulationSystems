@@ -1,0 +1,58 @@
+file 2632834 1571312642                                         
+version 2
+run Second_exit_8-4-20191017-13:44:02-1955
+attr configname Second_exit_8
+attr datetime 20191017-13:44:02
+attr experiment Second_exit_8
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network ResponseTimeNetwork
+attr processid 1955
+attr repetition 4
+attr replication #4
+attr resultdir results
+attr runnumber 4
+attr seedset 4
+param **.Source.interArrivalTime exponential(5s)
+param **.jobPriority bernoulli(0.6)
+param **.PS.serviceTimeU1 "uniform(0.8s, 1.2s)"
+param **.PS.serviceTimeU2 "uniform(1.8s, 2.2s)"
+param **.SS1.serviceTime exponential(1s)
+param **.SS2.serviceTime exponential(1.2s)
+param **.PS.exitProbability bernoulli(0.8)
+
+vector 0 ResponseTimeNetwork.SS1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 1 ResponseTimeNetwork.SS2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 2 ResponseTimeNetwork.QueueU1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 3 ResponseTimeNetwork.QueueU2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 4 ResponseTimeNetwork.sink lifeTimeU1:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs U1, vector"
+attr unit s
+vector 5 ResponseTimeNetwork.sink lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+vector 6 ResponseTimeNetwork.sink lifeTimeU2:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs U2, vector"
+attr unit s
+2	1628 939762 0 139794 0 29038.425334268305 32768 0 12 49788 161624
+0	941390 303302 0 143925 0 29989.887294509913 10571 0 12 13511 38217
+1	1244692 225213 0 143963 0 29997.610226447207 7839 0 11 12801 42335
+2	1469905 29567 139798 143972 29038.754642382419 29999.109767732303 989 0 6 1560 4050
+3	1499472 639571 0 143967 0 29998.219540961179 21806 0 68 393753 13326467
+4	2139043 148334 5 143938 17.929839725918 29992.396820012385 3517 0.823900311161 272.1107451456 67424.160754761 3106720.3592047
+5	2287377 246895 5 143938 17.929839725918 29992.396820012385 5831 0.812838677783 3530.8670311419 606810.9792655 387780199.7773
+6	2534272 98561 32 143463 40.05740257408 29902.113992128245 2314 0.812838677783 3530.8670311419 539386.81851074 384673479.4181
+

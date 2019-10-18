@@ -1,0 +1,58 @@
+file 1941863 1571312666                                         
+version 2
+run Third_exit_8-7-20191017-13:44:25-2042
+attr configname Third_exit_8
+attr datetime 20191017-13:44:25
+attr experiment Third_exit_8
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network ResponseTimeNetwork
+attr processid 2042
+attr repetition 7
+attr replication #7
+attr resultdir results
+attr runnumber 7
+attr seedset 7
+param **.Source.interArrivalTime exponential(6s)
+param **.jobPriority bernoulli(0.8)
+param **.PS.serviceTimeU1 "uniform(1.2s, 2.0s)"
+param **.PS.serviceTimeU2 "uniform(2.4s, 2.8s)"
+param **.SS1.serviceTime exponential(1.4s)
+param **.SS2.serviceTime exponential(2s)
+param **.PS.exitProbability bernoulli(0.8)
+
+vector 0 ResponseTimeNetwork.SS1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 1 ResponseTimeNetwork.SS2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 2 ResponseTimeNetwork.QueueU1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 3 ResponseTimeNetwork.QueueU2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 4 ResponseTimeNetwork.sink lifeTimeU1:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs U1, vector"
+attr unit s
+vector 5 ResponseTimeNetwork.sink lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+vector 6 ResponseTimeNetwork.sink lifeTimeU2:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs U2, vector"
+attr unit s
+2	1625 983946 0 83811 0 26110.413309342749 32768 0 238 4111362 634304520
+0	985571 451632 0 96342 0 29999.057561915371 15889 0 12 25832 83004
+1	1437203 471 0 1894 0 601.088487171609 19 0 2 11 13
+2	1437674 152080 83812 96341 26110.972297356465 29999.057561915371 4923 220 297 1284973 336736345
+3	1589754 33152 0 96235 0 29963.795520166808 1104 0 1017 518910 351171612
+4	1622906 159040 53 96299 18.357259935638 29984.650441431072 3759 1.39486113551 8321.1904721473 3814940.920095 8079228836.3673
+5	1781946 159478 53 96299 18.357259935638 29984.650441431072 3770 1.39486113551 8321.1904721473 3820174.9668503 8084508545.1462
+6	1941424 438 959 6320 302.69013084205 1996.361309385982 11 39.460194995702 1548.6834333592 5234.0467553006 5279708.778827
+

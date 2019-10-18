@@ -1,0 +1,57 @@
+file 617822 1571312625                                          
+version 2
+run Second_exit_2-2-20191017-13:43:45-1906
+attr configname Second_exit_2
+attr datetime 20191017-13:43:45
+attr experiment Second_exit_2
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network ResponseTimeNetwork
+attr processid 1906
+attr repetition 2
+attr replication #2
+attr resultdir results
+attr runnumber 2
+attr seedset 2
+param **.Source.interArrivalTime exponential(5s)
+param **.jobPriority bernoulli(0.6)
+param **.PS.serviceTimeU1 "uniform(0.8s, 1.2s)"
+param **.PS.serviceTimeU2 "uniform(1.8s, 2.2s)"
+param **.SS1.serviceTime exponential(1s)
+param **.SS2.serviceTime exponential(1.2s)
+param **.PS.exitProbability bernoulli(0.2)
+
+vector 0 ResponseTimeNetwork.SS1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 1 ResponseTimeNetwork.SS2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 2 ResponseTimeNetwork.QueueU1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 3 ResponseTimeNetwork.QueueU2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 4 ResponseTimeNetwork.sink lifeTimeU1:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs U1, vector"
+attr unit s
+vector 5 ResponseTimeNetwork.sink lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+vector 6 ResponseTimeNetwork.sink lifeTimeU2:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs U2, vector"
+attr unit s
+0	1628 909 0 30934 0 24069.020469451129 33 0 1 16 16
+1	2537 790 0 25861 0 20283.361723219262 29 0 1 14 14
+2	3327 69209 0 38451 0 29985.836735695208 2451 0 3 1429 1645
+3	72536 43853 0 38376 0 29933.783511381579 1549 0 3 902 1034
+4	116389 151902 7 38460 4.036076293571 29996.46547188141 3695 0.800256800465 14.163994655779 6416.1058370202 19078.213311508
+5	268291 250716 7 38460 4.036076293571 29996.46547188141 6096 0.800043806806 14.163994655779 10864.643132576 33836.729609024
+6	519007 98814 10 38425 5.029975932056 29977.742385631318 2401 0.800043806806 13.564780167514 4448.5372955558 14758.516297515
+

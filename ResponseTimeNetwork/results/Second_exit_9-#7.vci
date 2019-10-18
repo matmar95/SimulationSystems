@@ -1,0 +1,59 @@
+file 3470475 1571312649                                         
+version 2
+run Second_exit_9-7-20191017-13:44:09-1979
+attr configname Second_exit_9
+attr datetime 20191017-13:44:09
+attr experiment Second_exit_9
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network ResponseTimeNetwork
+attr processid 1979
+attr repetition 7
+attr replication #7
+attr resultdir results
+attr runnumber 7
+attr seedset 7
+param **.Source.interArrivalTime exponential(5s)
+param **.jobPriority bernoulli(0.6)
+param **.PS.serviceTimeU1 "uniform(0.8s, 1.2s)"
+param **.PS.serviceTimeU2 "uniform(1.8s, 2.2s)"
+param **.SS1.serviceTime exponential(1s)
+param **.SS2.serviceTime exponential(1.2s)
+param **.PS.exitProbability bernoulli(0.9)
+
+vector 0 ResponseTimeNetwork.SS1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 1 ResponseTimeNetwork.SS2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 2 ResponseTimeNetwork.QueueU1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 3 ResponseTimeNetwork.QueueU2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 4 ResponseTimeNetwork.sink lifeTimeU1:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs U1, vector"
+attr unit s
+vector 5 ResponseTimeNetwork.sink lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+vector 6 ResponseTimeNetwork.sink lifeTimeU2:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs U2, vector"
+attr unit s
+2	1628 972305 0 84544 0 16259.379527380751 32768 0 288 5021932 1048508064
+0	973933 936008 0 115134 0 22127.017104174823 32768 0 29 153282 1321632
+0	1909941 348340 115136 155814 22127.458249117429 29999.839769802167 11615 0 22 49117 359323
+1	2258281 314 0 1439 0 283.780248657638 13 0 1 6 6
+2	2258595 876631 84545 155813 16259.685858525926 29999.839769802167 27678 283 479 10758229 4259922819
+3	3135226 76236 0 155727 0 29982.324123768505 2440 0 2383 2841320 4513623440
+4	3211462 129308 59 155778 12.858907066277 29991.58222325176 3027 1.642307559558 22776.923899281 6253748.3756793 28545698961.276
+5	3340770 129506 59 155778 12.858907066277 29991.58222325176 3032 1.642307559558 22776.923899281 6254467.8061056 28545829819.929
+6	3470276 198 203 1333 40.997540930089 264.019377128769 5 40.600656372746 228.48117880998 719.43042628645 130858.6531101
+

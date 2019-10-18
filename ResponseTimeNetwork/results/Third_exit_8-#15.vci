@@ -1,0 +1,58 @@
+file 1935048 1571312668                                         
+version 2
+run Third_exit_8-15-20191017-13:44:28-2050
+attr configname Third_exit_8
+attr datetime 20191017-13:44:28
+attr experiment Third_exit_8
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network ResponseTimeNetwork
+attr processid 2050
+attr repetition 15
+attr replication #15
+attr resultdir results
+attr runnumber 15
+attr seedset 15
+param **.Source.interArrivalTime exponential(6s)
+param **.jobPriority bernoulli(0.8)
+param **.PS.serviceTimeU1 "uniform(1.2s, 2.0s)"
+param **.PS.serviceTimeU2 "uniform(2.4s, 2.8s)"
+param **.SS1.serviceTime exponential(1.4s)
+param **.SS2.serviceTime exponential(2s)
+param **.PS.exitProbability bernoulli(0.8)
+
+vector 0 ResponseTimeNetwork.SS1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 1 ResponseTimeNetwork.SS2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 2 ResponseTimeNetwork.QueueU1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 3 ResponseTimeNetwork.QueueU2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 4 ResponseTimeNetwork.sink lifeTimeU1:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs U1, vector"
+attr unit s
+vector 5 ResponseTimeNetwork.sink lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+vector 6 ResponseTimeNetwork.sink lifeTimeU2:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs U2, vector"
+attr unit s
+2	1630 978666 0 83850 0 26203.060337452438 32768 0 187 3440102 466867916
+0	980296 453625 0 96016 0 29999.81663441997 15961 0 12 25988 82676
+1	1433921 164 0 5487 0 1780.048225408371 7 0 1 3 3
+2	1434085 147610 83854 96015 26204.07756153721 29999.81663441997 4779 146 219 871943 161482957
+3	1581695 32146 0 95976 0 29989.156545581253 1071 0 1004 504923 337865955
+4	1613841 160253 10 96009 14.662627514472 29998.466972461939 3789 1.36844046656 8506.7448971029 3220154.5045283 5939958756.1015
+5	1774094 160603 10 96009 14.662627514472 29998.466972461939 3798 1.36844046656 8506.7448971029 3220836.0108133 5940026097.7011
+6	1934697 350 27 1179 26.522826002382 421.402933877919 9 5.108679935542 137.02633346981 681.50628501829 67341.599557249
+

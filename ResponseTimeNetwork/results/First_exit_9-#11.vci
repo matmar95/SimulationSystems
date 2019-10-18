@@ -1,0 +1,58 @@
+file 3730570 1571312622                                         
+version 2
+run First_exit_9-11-20191017-13:43:41-1897
+attr configname First_exit_9
+attr datetime 20191017-13:43:41
+attr experiment First_exit_9
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network ResponseTimeNetwork
+attr processid 1897
+attr repetition 11
+attr replication #11
+attr resultdir results
+attr runnumber 11
+attr seedset 11
+param **.Source.interArrivalTime exponential(4s)
+param **.jobPriority bernoulli(0.4)
+param **.PS.serviceTimeU1 "uniform(0.4s, 1.0s)"
+param **.PS.serviceTimeU2 "uniform(1s, 1.2s)"
+param **.SS1.serviceTime exponential(0.4s)
+param **.SS2.serviceTime exponential(0.8s)
+param **.PS.exitProbability bernoulli(0.9)
+
+vector 0 ResponseTimeNetwork.SS1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 1 ResponseTimeNetwork.SS2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 2 ResponseTimeNetwork.QueueU1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 3 ResponseTimeNetwork.QueueU2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 4 ResponseTimeNetwork.sink lifeTimeU1:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs U1, vector"
+attr unit s
+vector 5 ResponseTimeNetwork.sink lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+vector 6 ResponseTimeNetwork.sink lifeTimeU2:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs U2, vector"
+attr unit s
+2	1630 931510 0 127161 0 17283.298863172424 32768 0 16 67636 303884
+0	933140 292766 0 220672 0 29996.439713123355 10059 0 5 7409 10953
+1	1225906 409669 0 220474 0 29970.312423134185 14105 0 22 46010 338348
+2	1635575 743653 127165 220700 17283.3080070658 29999.910858352023 24829 0 20 69096 453154
+3	2379228 986591 0 220540 0 29977.123070508668 31294 0 3089 46235405 96069248055
+4	3365819 124549 52 220634 8.137910795675 29990.60879563594 2923 0.437614390741 528.00290676891 83417.250453577 6349689.8455003
+5	3490368 182375 52 220634 8.137910795675 29990.60879563594 4272 0.437614390741 29167.910952943 9003603.0306221 100749119901.82
+6	3672743 57826 418 220444 57.314867797835 29966.649733652525 1349 7.021252148648 29167.910952943 8920185.7801685 100742770211.97
+

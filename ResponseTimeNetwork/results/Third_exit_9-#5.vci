@@ -1,0 +1,58 @@
+file 2031495 1571312671                                         
+version 2
+run Third_exit_9-5-20191017-13:44:31-2061
+attr configname Third_exit_9
+attr datetime 20191017-13:44:31
+attr experiment Third_exit_9
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network ResponseTimeNetwork
+attr processid 2061
+attr repetition 5
+attr replication #5
+attr resultdir results
+attr runnumber 5
+attr seedset 5
+param **.Source.interArrivalTime exponential(6s)
+param **.jobPriority bernoulli(0.8)
+param **.PS.serviceTimeU1 "uniform(1.2s, 2.0s)"
+param **.PS.serviceTimeU2 "uniform(2.4s, 2.8s)"
+param **.SS1.serviceTime exponential(1.4s)
+param **.SS2.serviceTime exponential(2s)
+param **.PS.exitProbability bernoulli(0.9)
+
+vector 0 ResponseTimeNetwork.SS1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 1 ResponseTimeNetwork.SS2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 2 ResponseTimeNetwork.QueueU1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 3 ResponseTimeNetwork.QueueU2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 4 ResponseTimeNetwork.sink lifeTimeU2:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs U2, vector"
+attr unit s
+vector 5 ResponseTimeNetwork.sink lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+vector 6 ResponseTimeNetwork.sink lifeTimeU1:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs U1, vector"
+attr unit s
+2	1625 1005411 0 82780 0 24931.306436289223 32768 0 1663 28201204 31719097428
+0	1007036 619285 0 99777 0 29999.109642375738 21769 0 16 53610 255912
+1	1626321 56 0 119 0 38.487021358859 3 0 1 1 1
+2	1626377 215034 82783 99778 24933.231402950483 29999.109642375738 6745 1658 2069 12601568 23637887788
+3	1841411 30363 0 99763 0 29995.766919507143 1007 0 984 484659 318072395
+4	1871774 73 24 117 7.981328058284 38.277714570228 2 6.475208192132 13.159454784452 19.634662976584 215.09957135549
+5	1871847 79860 24 99713 7.981328058284 29980.657309325907 1888 6.475208192132 26669.06563905 10626070.78257 108105783937.95
+6	1951707 79787 143 99713 44.922830782633 29980.657309325907 1886 21.329785968361 26669.06563905 10626051.147907 108105783722.85
+

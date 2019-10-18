@@ -1,0 +1,57 @@
+file 553399 1571312655                                          
+version 2
+run Third_exit_2-17-20191017-13:44:15-2009
+attr configname Third_exit_2
+attr datetime 20191017-13:44:15
+attr experiment Third_exit_2
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network ResponseTimeNetwork
+attr processid 2009
+attr repetition 17
+attr replication #17
+attr resultdir results
+attr runnumber 17
+attr seedset 17
+param **.Source.interArrivalTime exponential(6s)
+param **.jobPriority bernoulli(0.8)
+param **.PS.serviceTimeU1 "uniform(1.2s, 2.0s)"
+param **.PS.serviceTimeU2 "uniform(2.4s, 2.8s)"
+param **.SS1.serviceTime exponential(1.4s)
+param **.SS2.serviceTime exponential(2s)
+param **.PS.exitProbability bernoulli(0.2)
+
+vector 0 ResponseTimeNetwork.SS1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 1 ResponseTimeNetwork.SS2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 2 ResponseTimeNetwork.QueueU1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 3 ResponseTimeNetwork.QueueU2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 4 ResponseTimeNetwork.sink lifeTimeU1:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs U1, vector"
+attr unit s
+vector 5 ResponseTimeNetwork.sink lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+vector 6 ResponseTimeNetwork.sink lifeTimeU2:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs U2, vector"
+attr unit s
+0	1630 1946 0 31216 0 29047.468091609818 69 0 2 36 38
+1	3576 178 0 18819 0 17453.662002207145 7 0 1 3 3
+2	3754 104771 0 32191 0 29946.306214347574 3723 0 5 2643 3665
+3	108525 24065 0 32216 0 29968.428191152125 857 0 2 492 556
+4	132590 170011 17 32230 7.175070753909 29982.753441926 4140 1.200245159678 22.064590642184 12140.100253123 58985.273630894
+5	302601 210404 17 32230 7.175070753909 29982.753441926 5123 1.200245159678 26.995560938054 15474.193512369 80892.682692803
+6	513005 40393 49 32225 16.703423633455 29980.174786941168 983 1.201052426361 26.995560938054 3334.093259246 21907.40906191
+

@@ -1,0 +1,53 @@
+file 1940710 1571312666                                         
+version 2
+run Third_exit_8-10-20191017-13:44:26-2045
+attr configname Third_exit_8
+attr datetime 20191017-13:44:26
+attr experiment Third_exit_8
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network ResponseTimeNetwork
+attr processid 2045
+attr repetition 10
+attr replication #10
+attr resultdir results
+attr runnumber 10
+attr seedset 10
+param **.Source.interArrivalTime exponential(6s)
+param **.jobPriority bernoulli(0.8)
+param **.PS.serviceTimeU1 "uniform(1.2s, 2.0s)"
+param **.PS.serviceTimeU2 "uniform(2.4s, 2.8s)"
+param **.SS1.serviceTime exponential(1.4s)
+param **.SS2.serviceTime exponential(2s)
+param **.PS.exitProbability bernoulli(0.8)
+
+vector 0 ResponseTimeNetwork.SS1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 1 ResponseTimeNetwork.SS2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 2 ResponseTimeNetwork.QueueU1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 3 ResponseTimeNetwork.QueueU2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 4 ResponseTimeNetwork.sink lifeTimeU1:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs U1, vector"
+attr unit s
+vector 5 ResponseTimeNetwork.sink lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+2	1485 980382 0 83627 0 26056.828777561011 32768 0 200 3913146 553624496
+0	981867 454141 0 96294 0 29995.101140707081 15987 0 11 25877 81929
+1	1436008 54 0 51 0 24.900608598132 3 0 1 1 1
+2	1436062 153700 83628 96310 26057.893244459498 29999.646216817495 4977 183 225 1007614 204207800
+3	1589762 30835 0 96195 0 29965.389074288369 1023 0 1006 506551 339875671
+4	1620597 160056 39 96299 20.6218662432 29996.176175115451 3783 8.462002054845 10915.817233338 3687202.4191384 7272011348.0885
+5	1780653 160056 39 96299 20.6218662432 29996.176175115451 3783 8.462002054845 10915.817233338 3687202.4191384 7272011348.0885
+

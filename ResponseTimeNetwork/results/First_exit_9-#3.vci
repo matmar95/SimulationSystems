@@ -1,0 +1,58 @@
+file 3693519 1571312616                                         
+version 2
+run First_exit_9-3-20191017-13:43:36-1873
+attr configname First_exit_9
+attr datetime 20191017-13:43:36
+attr experiment First_exit_9
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network ResponseTimeNetwork
+attr processid 1873
+attr repetition 3
+attr replication #3
+attr resultdir results
+attr runnumber 3
+attr seedset 3
+param **.Source.interArrivalTime exponential(4s)
+param **.jobPriority bernoulli(0.4)
+param **.PS.serviceTimeU1 "uniform(0.4s, 1.0s)"
+param **.PS.serviceTimeU2 "uniform(1s, 1.2s)"
+param **.SS1.serviceTime exponential(0.4s)
+param **.SS2.serviceTime exponential(0.8s)
+param **.PS.exitProbability bernoulli(0.9)
+
+vector 0 ResponseTimeNetwork.SS1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 1 ResponseTimeNetwork.SS2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 2 ResponseTimeNetwork.QueueU1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 3 ResponseTimeNetwork.QueueU2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 4 ResponseTimeNetwork.sink lifeTimeU1:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs U1, vector"
+attr unit s
+vector 5 ResponseTimeNetwork.sink lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+vector 6 ResponseTimeNetwork.sink lifeTimeU2:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs U2, vector"
+attr unit s
+2	1625 928609 0 122590 0 16738.905462225928 32768 0 17 67556 294440
+0	930234 295644 0 219710 0 29942.919223745789 10185 0 5 7528 11040
+1	1225878 381512 0 220123 0 29999.617791233317 13117 0 20 32600 170354
+2	1607390 762983 122595 219881 16739.896228502906 29965.856692452447 25515 0 16 55561 267493
+3	2370373 962035 0 220124 0 29999.617791233317 30379 0 3136 47930393 100097166741
+4	3332408 125049 46 219887 8.753980789237 29966.578745935948 2938 0.568510042304 335.37966197777 79280.899832804 4979662.7250008
+5	3457457 180555 46 220035 8.753980789237 29987.519652886921 4230 0.568510042304 28213.957825774 9256943.268634 106241765851.56
+6	3638012 55506 90 220035 14.541492919388 29987.519652886921 1292 1.496795429875 28213.957825774 9177662.3688012 106236786188.83
+

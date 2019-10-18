@@ -1,0 +1,58 @@
+file 3716451 1571312624                                         
+version 2
+run First_exit_9-15-20191017-13:43:44-1901
+attr configname First_exit_9
+attr datetime 20191017-13:43:44
+attr experiment First_exit_9
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network ResponseTimeNetwork
+attr processid 1901
+attr repetition 15
+attr replication #15
+attr resultdir results
+attr runnumber 15
+attr seedset 15
+param **.Source.interArrivalTime exponential(4s)
+param **.jobPriority bernoulli(0.4)
+param **.PS.serviceTimeU1 "uniform(0.4s, 1.0s)"
+param **.PS.serviceTimeU2 "uniform(1s, 1.2s)"
+param **.SS1.serviceTime exponential(0.4s)
+param **.SS2.serviceTime exponential(0.8s)
+param **.PS.exitProbability bernoulli(0.9)
+
+vector 0 ResponseTimeNetwork.SS1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 1 ResponseTimeNetwork.SS2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 2 ResponseTimeNetwork.QueueU1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 3 ResponseTimeNetwork.QueueU2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 4 ResponseTimeNetwork.sink lifeTimeU1:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs U1, vector"
+attr unit s
+vector 5 ResponseTimeNetwork.sink lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+vector 6 ResponseTimeNetwork.sink lifeTimeU2:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs U2, vector"
+attr unit s
+2	1630 930460 0 123773 0 16805.04654684087 32768 0 13 78240 365784
+0	932090 315596 0 221195 0 29999.870151602884 10837 0 5 8200 12286
+1	1247686 369773 0 219045 0 29714.132798883203 12767 0 20 40887 295579
+2	1617459 813139 123774 221198 16805.400955364153 29999.975027416792 27154 0 24 80147 554093
+3	2430598 921854 0 221173 0 29997.225552412755 29215 0 3368 45749731 98921252179
+4	3352452 127960 42 221098 14.80450621147 29988.170745188934 3001 0.423244069075 541.89144225959 91772.080551912 7336918.9345848
+5	3480412 181999 42 221098 14.80450621147 29988.170745188934 4265 0.423244069075 26694.158967567 8283266.4514604 91718332284.484
+6	3662411 54039 472 217465 71.960423678129 29503.750473573066 1264 28.883486614559 26694.158967567 8191494.3709084 91710995365.55
+

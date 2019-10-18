@@ -1,0 +1,58 @@
+file 1948451 1571312665                                         
+version 2
+run Third_exit_8-6-20191017-13:44:25-2041
+attr configname Third_exit_8
+attr datetime 20191017-13:44:25
+attr experiment Third_exit_8
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network ResponseTimeNetwork
+attr processid 2041
+attr repetition 6
+attr replication #6
+attr resultdir results
+attr runnumber 6
+attr seedset 6
+param **.Source.interArrivalTime exponential(6s)
+param **.jobPriority bernoulli(0.8)
+param **.PS.serviceTimeU1 "uniform(1.2s, 2.0s)"
+param **.PS.serviceTimeU2 "uniform(2.4s, 2.8s)"
+param **.SS1.serviceTime exponential(1.4s)
+param **.SS2.serviceTime exponential(2s)
+param **.PS.exitProbability bernoulli(0.8)
+
+vector 0 ResponseTimeNetwork.SS1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 1 ResponseTimeNetwork.SS2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 2 ResponseTimeNetwork.QueueU1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 3 ResponseTimeNetwork.QueueU2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 4 ResponseTimeNetwork.sink lifeTimeU1:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs U1, vector"
+attr unit s
+vector 5 ResponseTimeNetwork.sink lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+vector 6 ResponseTimeNetwork.sink lifeTimeU2:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs U2, vector"
+attr unit s
+2	1625 983691 0 84087 0 26183.426359023745 32768 0 338 5410262 1198009960
+0	985316 456799 0 96448 0 29997.469660125175 16059 0 16 26635 90597
+1	1442115 1445 0 5526 0 1793.719548148884 55 0 3 43 63
+2	1443560 149694 84091 96457 26184.714586442722 29999.354790485704 4847 319 391 1709811 604062107
+3	1593254 36902 0 96307 0 29954.636337271254 1240 0 977 484236 311506560
+4	1630156 157927 5 96458 14.769246639396 29999.354790485704 3737 1.367525092512 14070.700138403 4818536.0820819 14020171387.823
+5	1788083 159147 5 96458 14.769246639396 29999.354790485704 3767 1.367525092512 14070.700138403 4841995.9045273 14044240020.543
+6	1947230 1220 3485 6015 1125.160583790971 1948.345039621764 30 138.39333933964 1691.7616650724 23459.822445421 24068632.72043
+

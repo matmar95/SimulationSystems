@@ -1,0 +1,58 @@
+file 1901474 1571312666                                         
+version 2
+run Third_exit_8-9-20191017-13:44:26-2044
+attr configname Third_exit_8
+attr datetime 20191017-13:44:26
+attr experiment Third_exit_8
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network ResponseTimeNetwork
+attr processid 2044
+attr repetition 9
+attr replication #9
+attr resultdir results
+attr runnumber 9
+attr seedset 9
+param **.Source.interArrivalTime exponential(6s)
+param **.jobPriority bernoulli(0.8)
+param **.PS.serviceTimeU1 "uniform(1.2s, 2.0s)"
+param **.PS.serviceTimeU2 "uniform(2.4s, 2.8s)"
+param **.SS1.serviceTime exponential(1.4s)
+param **.SS2.serviceTime exponential(2s)
+param **.PS.exitProbability bernoulli(0.8)
+
+vector 0 ResponseTimeNetwork.SS1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 1 ResponseTimeNetwork.SS2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 2 ResponseTimeNetwork.QueueU1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 3 ResponseTimeNetwork.QueueU2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 4 ResponseTimeNetwork.sink lifeTimeU1:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs U1, vector"
+attr unit s
+vector 5 ResponseTimeNetwork.sink lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+vector 6 ResponseTimeNetwork.sink lifeTimeU2:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs U2, vector"
+attr unit s
+2	1625 961906 0 83637 0 26157.55455238919 32768 0 127 1576940 100936684
+0	963531 439161 0 96017 0 29999.219447924454 15461 0 10 22808 63578
+1	1402692 530 0 44270 0 13909.895208790794 19 0 3 21 41
+2	1403222 149812 83638 96020 26158.165313510621 29999.994542214261 4849 118 170 701904 102665136
+3	1553034 30517 0 95794 0 29930.191003857415 1007 0 966 484545 308585343
+4	1583551 158875 31 96007 7.732363357877 29995.998451829908 3758 2.022560161425 6327.1934212672 1698779.8867702 1835273392.3822
+5	1742426 158961 31 96007 7.732363357877 29995.998451829908 3760 2.022560161425 13495.623174773 1725739.8558257 2198693847.2533
+6	1901387 86 44214 44225 13892.850033168543 13897.085737002316 2 13464.345880721 13495.623174773 26959.969055494 363420454.87116
+

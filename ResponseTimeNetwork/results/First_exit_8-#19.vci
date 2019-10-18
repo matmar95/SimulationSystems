@@ -1,0 +1,58 @@
+file 3150807 1571312621                                         
+version 2
+run First_exit_8-19-20191017-13:43:41-1896
+attr configname First_exit_8
+attr datetime 20191017-13:43:41
+attr experiment First_exit_8
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network ResponseTimeNetwork
+attr processid 1896
+attr repetition 19
+attr replication #19
+attr resultdir results
+attr runnumber 19
+attr seedset 19
+param **.Source.interArrivalTime exponential(4s)
+param **.jobPriority bernoulli(0.4)
+param **.PS.serviceTimeU1 "uniform(0.4s, 1.0s)"
+param **.PS.serviceTimeU2 "uniform(1s, 1.2s)"
+param **.SS1.serviceTime exponential(0.4s)
+param **.SS2.serviceTime exponential(0.8s)
+param **.PS.exitProbability bernoulli(0.8)
+
+vector 0 ResponseTimeNetwork.SS1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 1 ResponseTimeNetwork.SS2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 2 ResponseTimeNetwork.QueueU1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 3 ResponseTimeNetwork.QueueU2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 4 ResponseTimeNetwork.sink lifeTimeU1:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs U1, vector"
+attr unit s
+vector 5 ResponseTimeNetwork.sink lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+vector 6 ResponseTimeNetwork.sink lifeTimeU2:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs U2, vector"
+attr unit s
+3	1630 947576 0 153797 0 24827.356268003588 32768 0 31 194736 2199972
+0	949206 60045 0 187270 0 29907.299184313263 2075 0 3 1167 1313
+1	1009251 490025 0 187876 0 29999.866513173654 16930 0 13 28253 95405
+2	1499276 786204 0 187870 0 29998.852992731598 27197 0 6 21458 34322
+3	2285480 226296 153801 187877 24827.60381882846 29999.866513173654 7469 0 32 67770 1048478
+4	2511776 124586 30 187768 5.857966809573 29980.417237342492 2959 0.400125092641 82.906692946279 24458.43131149 405842.3932974
+5	2636362 319515 30 187844 5.857966809573 29995.567577719162 7542 0.400125092641 733.24153315055 229573.88545833 26066256.959918
+6	2955877 194929 102 187844 17.433502307363 29995.567577719162 4583 0.404728676938 733.24153315055 205115.45414684 25660414.566621
+

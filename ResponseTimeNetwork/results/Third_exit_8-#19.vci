@@ -1,0 +1,58 @@
+file 1945497 1571312669                                         
+version 2
+run Third_exit_8-19-20191017-13:44:29-2057
+attr configname Third_exit_8
+attr datetime 20191017-13:44:29
+attr experiment Third_exit_8
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network ResponseTimeNetwork
+attr processid 2057
+attr repetition 19
+attr replication #19
+attr resultdir results
+attr runnumber 19
+attr seedset 19
+param **.Source.interArrivalTime exponential(6s)
+param **.jobPriority bernoulli(0.8)
+param **.PS.serviceTimeU1 "uniform(1.2s, 2.0s)"
+param **.PS.serviceTimeU2 "uniform(2.4s, 2.8s)"
+param **.SS1.serviceTime exponential(1.4s)
+param **.SS2.serviceTime exponential(2s)
+param **.PS.exitProbability bernoulli(0.8)
+
+vector 0 ResponseTimeNetwork.SS1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 1 ResponseTimeNetwork.SS2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 2 ResponseTimeNetwork.QueueU1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 3 ResponseTimeNetwork.QueueU2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 4 ResponseTimeNetwork.sink lifeTimeU1:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs U1, vector"
+attr unit s
+vector 5 ResponseTimeNetwork.sink lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+vector 6 ResponseTimeNetwork.sink lifeTimeU2:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs U2, vector"
+attr unit s
+2	1630 985597 0 83688 0 26064.033557906458 32768 0 313 5619658 1240041036
+0	987227 459848 0 96378 0 29999.773431151758 16166 0 13 27281 92959
+1	1447075 8 0 0 0 0 1 0 0 0 0
+2	1447083 152977 83690 96377 26064.495313914938 29999.773431151758 4953 288 331 1541922 480414996
+3	1600060 31166 0 96353 0 29990.489710413427 1032 0 1005 505590 338863956
+4	1631226 156977 19 96366 6.447506582938 29996.129188480253 3711 1.899688305147 11524.894001764 5082909.5386867 14774068607.961
+5	1788203 157135 19 96366 6.447506582938 29996.129188480253 3715 1.899688305147 11524.894001764 5083360.5947128 14774130848.122
+6	1945338 158 230 1369 80.845475550925 464.477670807529 4 31.738049124945 171.00266083486 451.05602607137 62240.161056283
+

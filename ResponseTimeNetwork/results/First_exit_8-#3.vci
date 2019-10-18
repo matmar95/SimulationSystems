@@ -1,0 +1,58 @@
+file 3181064 1571312611                                         
+version 2
+run First_exit_8-3-20191017-13:43:31-1848
+attr configname First_exit_8
+attr datetime 20191017-13:43:31
+attr experiment First_exit_8
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network ResponseTimeNetwork
+attr processid 1848
+attr repetition 3
+attr replication #3
+attr resultdir results
+attr runnumber 3
+attr seedset 3
+param **.Source.interArrivalTime exponential(4s)
+param **.jobPriority bernoulli(0.4)
+param **.PS.serviceTimeU1 "uniform(0.4s, 1.0s)"
+param **.PS.serviceTimeU2 "uniform(1s, 1.2s)"
+param **.SS1.serviceTime exponential(0.4s)
+param **.SS2.serviceTime exponential(0.8s)
+param **.PS.exitProbability bernoulli(0.8)
+
+vector 0 ResponseTimeNetwork.SS1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 1 ResponseTimeNetwork.SS2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 2 ResponseTimeNetwork.QueueU1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 3 ResponseTimeNetwork.QueueU2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 4 ResponseTimeNetwork.sink lifeTimeU1:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs U1, vector"
+attr unit s
+vector 5 ResponseTimeNetwork.sink lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+vector 6 ResponseTimeNetwork.sink lifeTimeU2:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs U2, vector"
+attr unit s
+3	1625 945182 0 150532 0 23674.067211126651 32768 0 50 217138 3229112
+0	946807 60146 0 188141 0 29900.620968678416 2079 0 4 1213 1427
+1	1006953 507205 0 188710 0 29999.498890400811 17591 0 12 29331 100599
+2	1514158 776559 0 188663 0 29991.691485116666 26849 0 6 21432 34484
+3	2290717 252066 150535 188706 23674.529330990904 29998.874415205319 8393 0 25 38992 334860
+4	2542783 123128 46 188669 8.753980789237 29992.507215843571 2921 0.404063994391 63.357668744869 24061.463027163 392169.20527995
+5	2665911 319140 46 188674 8.753980789237 29993.484004206665 7530 0.404063994391 1054.8692367469 231039.1957436 29688417.788181
+6	2985051 196012 83 188674 13.710439704262 29993.484004206665 4609 0.405267838668 1054.8692367469 206977.73271644 29296248.582901
+

@@ -1,0 +1,58 @@
+file 1932430 1571312667                                         
+version 2
+run Third_exit_8-12-20191017-13:44:27-2047
+attr configname Third_exit_8
+attr datetime 20191017-13:44:27
+attr experiment Third_exit_8
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network ResponseTimeNetwork
+attr processid 2047
+attr repetition 12
+attr replication #12
+attr resultdir results
+attr runnumber 12
+attr seedset 12
+param **.Source.interArrivalTime exponential(6s)
+param **.jobPriority bernoulli(0.8)
+param **.PS.serviceTimeU1 "uniform(1.2s, 2.0s)"
+param **.PS.serviceTimeU2 "uniform(2.4s, 2.8s)"
+param **.SS1.serviceTime exponential(1.4s)
+param **.SS2.serviceTime exponential(2s)
+param **.PS.exitProbability bernoulli(0.8)
+
+vector 0 ResponseTimeNetwork.SS1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 1 ResponseTimeNetwork.SS2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 2 ResponseTimeNetwork.QueueU1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 3 ResponseTimeNetwork.QueueU2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 4 ResponseTimeNetwork.sink lifeTimeU1:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs U1, vector"
+attr unit s
+vector 5 ResponseTimeNetwork.sink lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+vector 6 ResponseTimeNetwork.sink lifeTimeU2:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs U2, vector"
+attr unit s
+2	1630 976949 0 83669 0 26085.883140934761 32768 0 251 3885362 638130824
+0	978579 453020 0 96136 0 29998.670919560682 15933 0 14 27588 97726
+1	1431599 154 0 636 0 200.722064958453 7 0 1 3 3
+2	1431753 151263 83672 96144 26087.761609218027 29999.728273900701 4896 211 262 1156814 274488976
+3	1583016 31217 0 95532 0 29804.083932796675 1037 0 1004 504684 337854726
+4	1614233 158983 15 96121 5.884003044698 29992.753409727414 3760 1.33348690395 8827.2135522356 3638939.3821072 8123963920.5278
+5	1773216 159098 15 96121 5.884003044698 29992.753409727414 3763 1.33348690395 8827.2135522356 3639286.5795554 8124006510.8812
+6	1932314 115 318 609 99.844095653001 193.409390915265 3 81.63384972496 151.00617145454 347.19744816145 42590.353314999
+

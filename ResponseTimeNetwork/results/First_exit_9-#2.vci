@@ -1,0 +1,58 @@
+file 3697098 1571312615                                         
+version 2
+run First_exit_9-2-20191017-13:43:35-1871
+attr configname First_exit_9
+attr datetime 20191017-13:43:35
+attr experiment First_exit_9
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network ResponseTimeNetwork
+attr processid 1871
+attr repetition 2
+attr replication #2
+attr resultdir results
+attr runnumber 2
+attr seedset 2
+param **.Source.interArrivalTime exponential(4s)
+param **.jobPriority bernoulli(0.4)
+param **.PS.serviceTimeU1 "uniform(0.4s, 1.0s)"
+param **.PS.serviceTimeU2 "uniform(1s, 1.2s)"
+param **.SS1.serviceTime exponential(0.4s)
+param **.SS2.serviceTime exponential(0.8s)
+param **.PS.exitProbability bernoulli(0.9)
+
+vector 0 ResponseTimeNetwork.SS1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 1 ResponseTimeNetwork.SS2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 2 ResponseTimeNetwork.QueueU1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 3 ResponseTimeNetwork.QueueU2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 4 ResponseTimeNetwork.sink lifeTimeU1:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs U1, vector"
+attr unit s
+vector 5 ResponseTimeNetwork.sink lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+vector 6 ResponseTimeNetwork.sink lifeTimeU2:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs U2, vector"
+attr unit s
+2	1625 924314 0 113676 0 15412.688629606115 32768 0 16 90736 501076
+0	925939 329054 0 220514 0 29990.5021475895 11385 0 6 8596 13048
+1	1254993 351500 0 220313 0 29964.88941774362 12061 0 17 32978 181482
+2	1606493 853934 113680 220585 15412.764917866777 29999.801423172685 28563 0 15 59909 250801
+3	2460427 875338 0 220509 0 29989.823186819589 27532 0 3211 47033936 103556413522
+4	3335765 127474 125 220519 18.067178916591 29990.699781516321 2994 0.503249399285 293.18235246722 90551.626721665 6486554.4705404
+5	3463239 180666 125 220519 18.067178916591 29990.699781516321 4230 0.503249399285 28645.968882089 9582196.1310342 115390816370.82
+6	3643905 53192 133 219596 19.706606479906 29866.314880525216 1236 4.814596152591 28645.968882089 9491644.5043125 115384329816.35
+

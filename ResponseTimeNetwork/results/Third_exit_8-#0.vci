@@ -1,0 +1,58 @@
+file 1926723 1571312663                                         
+version 2
+run Third_exit_8-0-20191017-13:44:23-2035
+attr configname Third_exit_8
+attr datetime 20191017-13:44:23
+attr experiment Third_exit_8
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network ResponseTimeNetwork
+attr processid 2035
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param **.Source.interArrivalTime exponential(6s)
+param **.jobPriority bernoulli(0.8)
+param **.PS.serviceTimeU1 "uniform(1.2s, 2.0s)"
+param **.PS.serviceTimeU2 "uniform(2.4s, 2.8s)"
+param **.SS1.serviceTime exponential(1.4s)
+param **.SS2.serviceTime exponential(2s)
+param **.PS.exitProbability bernoulli(0.8)
+
+vector 0 ResponseTimeNetwork.SS1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 1 ResponseTimeNetwork.SS2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 2 ResponseTimeNetwork.QueueU1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 3 ResponseTimeNetwork.QueueU2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 4 ResponseTimeNetwork.sink lifeTimeU1:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs U1, vector"
+attr unit s
+vector 5 ResponseTimeNetwork.sink lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+vector 6 ResponseTimeNetwork.sink lifeTimeU2:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs U2, vector"
+attr unit s
+2	1625 980206 0 84318 0 26317.409820728722 32768 0 232 4394170 787564636
+0	981831 450504 0 96083 0 29998.970370199126 15855 0 15 26523 90331
+1	1432335 2305 0 10236 0 3257.099683496794 87 0 3 73 107
+2	1434640 142523 84319 96088 26317.735534098206 29999.729615378418 4615 198 233 997643 215861103
+3	1577163 37433 0 95983 0 29968.625965040147 1266 0 905 421347 247956929
+4	1614596 154646 32 96070 20.913910621438 29994.658688531465 3656 1.738935555598 9756.4816220898 4015868.0392782 9917300169.6625
+5	1769242 156063 32 96070 20.913910621438 29994.658688531465 3691 1.738935555598 9756.4816220898 4046090.6339169 9954753002.1174
+6	1925305 1417 1610 10143 517.626753985752 3226.28840978877 35 102.82527332333 2349.56905178 30222.594638624 37452832.454856
+

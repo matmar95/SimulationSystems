@@ -1,0 +1,58 @@
+file 3696339 1571312618                                         
+version 2
+run First_exit_9-5-20191017-13:43:37-1878
+attr configname First_exit_9
+attr datetime 20191017-13:43:37
+attr experiment First_exit_9
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network ResponseTimeNetwork
+attr processid 1878
+attr repetition 5
+attr replication #5
+attr resultdir results
+attr runnumber 5
+attr seedset 5
+param **.Source.interArrivalTime exponential(4s)
+param **.jobPriority bernoulli(0.4)
+param **.PS.serviceTimeU1 "uniform(0.4s, 1.0s)"
+param **.PS.serviceTimeU2 "uniform(1s, 1.2s)"
+param **.SS1.serviceTime exponential(0.4s)
+param **.SS2.serviceTime exponential(0.8s)
+param **.PS.exitProbability bernoulli(0.9)
+
+vector 0 ResponseTimeNetwork.SS1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 1 ResponseTimeNetwork.SS2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 2 ResponseTimeNetwork.QueueU1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 3 ResponseTimeNetwork.QueueU2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 4 ResponseTimeNetwork.sink lifeTimeU2:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs U2, vector"
+attr unit s
+vector 5 ResponseTimeNetwork.sink lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+vector 6 ResponseTimeNetwork.sink lifeTimeU1:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs U1, vector"
+attr unit s
+2	1625 925639 0 117073 0 15951.916583418339 32768 0 13 79180 384828
+0	927264 332424 0 220578 0 29985.544247344768 11465 0 8 8734 13476
+1	1259688 337750 0 220661 0 29997.539470165212 11605 0 23 32396 204650
+2	1597438 863233 117074 220677 15952.310229023325 29999.966119326492 28840 0 14 78072 446336
+3	2460671 867151 0 220673 0 29999.742932482243 27329 0 3338 44737072 97666315676
+4	3327822 53452 7 220444 1.90287661476 29969.945499113802 1247 0.898796703992 28672.644713128 8985638.2935412 109964983343.76
+5	3381274 184258 7 220659 1.90287661476 29997.243397955962 4320 0.529982503539 28672.644713128 9079284.6944338 109972124899.76
+6	3565532 130806 79 220659 11.950048119484 29997.243397955962 3073 0.529982503539 310.71805644904 93646.400892656 7141555.999075
+

@@ -1,0 +1,58 @@
+file 3693127 1571312621                                         
+version 2
+run First_exit_9-10-20191017-13:43:41-1895
+attr configname First_exit_9
+attr datetime 20191017-13:43:41
+attr experiment First_exit_9
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network ResponseTimeNetwork
+attr processid 1895
+attr repetition 10
+attr replication #10
+attr resultdir results
+attr runnumber 10
+attr seedset 10
+param **.Source.interArrivalTime exponential(4s)
+param **.jobPriority bernoulli(0.4)
+param **.PS.serviceTimeU1 "uniform(0.4s, 1.0s)"
+param **.PS.serviceTimeU2 "uniform(1s, 1.2s)"
+param **.SS1.serviceTime exponential(0.4s)
+param **.SS2.serviceTime exponential(0.8s)
+param **.PS.exitProbability bernoulli(0.9)
+
+vector 0 ResponseTimeNetwork.SS1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 1 ResponseTimeNetwork.SS2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 2 ResponseTimeNetwork.QueueU1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 3 ResponseTimeNetwork.QueueU2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 4 ResponseTimeNetwork.sink lifeTimeU1:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs U1, vector"
+attr unit s
+vector 5 ResponseTimeNetwork.sink lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+vector 6 ResponseTimeNetwork.sink lifeTimeU2:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs U2, vector"
+attr unit s
+2	1630 929469 0 124633 0 16969.042504718779 32768 0 13 71164 320688
+0	931099 303313 0 220386 0 29999.284513467 10438 0 5 7469 10603
+1	1234412 369664 0 220227 0 29977.204159924454 12731 0 26 37339 246557
+2	1604076 795561 124634 220385 16969.2348152226 29999.284513467 26585 0 18 66334 379488
+3	2399637 928165 0 220370 0 29997.393139580079 29419 0 3120 44507813 93120701273
+4	3327802 125879 303 220260 47.510607487335 29982.789949379729 2955 0.496724114012 292.3818392805 84739.950569093 5891173.8448897
+5	3453681 182662 303 220260 47.510607487335 29982.789949379729 4281 0.496724114012 27528.897854209 8855757.3445022 100499827889.61
+6	3636343 56783 450 219272 66.269340924778 29848.026760809172 1326 14.743498180824 27528.897854209 8771017.3939331 100493936715.76
+

@@ -1,0 +1,17 @@
+exitProb,name,mean,lowConfInt,upConfInt
+5,LengthQueueU2,0.81,0.789,0.83
+5,LengthQueueU1,1.008,0.993,1.024
+5,LengthSS1,0.661,0.645,0.676
+5,LengthSS2,0.579,0.546,0.613
+2,LengthQueueU2,0.59,0.579,0.601
+2,LengthQueueU1,0.718,0.708,0.727
+2,LengthSS1,0.521,0.509,0.533
+2,LengthSS2,0.389,0.342,0.437
+9,LengthQueueU2,501.384,494.814,507.954
+9,LengthQueueU1,1071.242,1053.515,1088.969
+9,LengthSS1,2.224,2.171,2.278
+9,LengthSS2,0.033,-0.015,0.081
+8,LengthQueueU2,457.538,433.941,481.136
+8,LengthQueueU1,141.401,114.428,168.373
+8,LengthSS1,1.643,1.607,1.678
+8,LengthSS2,0.56,0.352,0.768

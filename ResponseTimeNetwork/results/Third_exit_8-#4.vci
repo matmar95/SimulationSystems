@@ -1,0 +1,58 @@
+file 1921966 1571312665                                         
+version 2
+run Third_exit_8-4-20191017-13:44:25-2039
+attr configname Third_exit_8
+attr datetime 20191017-13:44:25
+attr experiment Third_exit_8
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network ResponseTimeNetwork
+attr processid 2039
+attr repetition 4
+attr replication #4
+attr resultdir results
+attr runnumber 4
+attr seedset 4
+param **.Source.interArrivalTime exponential(6s)
+param **.jobPriority bernoulli(0.8)
+param **.PS.serviceTimeU1 "uniform(1.2s, 2.0s)"
+param **.PS.serviceTimeU2 "uniform(2.4s, 2.8s)"
+param **.SS1.serviceTime exponential(1.4s)
+param **.SS2.serviceTime exponential(2s)
+param **.PS.exitProbability bernoulli(0.8)
+
+vector 0 ResponseTimeNetwork.SS1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 1 ResponseTimeNetwork.SS2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 2 ResponseTimeNetwork.QueueU1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 3 ResponseTimeNetwork.QueueU2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 4 ResponseTimeNetwork.sink lifeTimeU1:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs U1, vector"
+attr unit s
+vector 5 ResponseTimeNetwork.sink lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+vector 6 ResponseTimeNetwork.sink lifeTimeU2:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs U2, vector"
+attr unit s
+2	1625 982006 0 83956 0 26320.312670615206 32768 0 212 3891304 590923816
+0	983631 439278 0 95835 0 29994.928446599119 15447 0 11 24005 71935
+1	1422909 1715 0 1781 0 629.09263427144 67 0 5 111 325
+2	1424624 143756 83959 95849 26322.061632013025 29999.577100461065 4653 202 265 1132008 276602374
+3	1568380 33307 0 95831 0 29994.688766219486 1123 0 956 458375 291705001
+4	1601687 159349 5 95850 21.811070175098 29999.577100461065 3769 1.338156259991 12337.557147159 3659665.500964 7792968851.9913
+5	1761036 160139 5 95850 21.811070175098 29999.577100461065 3789 1.338156259991 12337.557147159 3662805.7453107 7793889577.5091
+6	1921175 790 92 1852 80.54178248097 649.093662417063 20 9.233186210316 543.74244626876 3140.2443467712 920725.51781056
+

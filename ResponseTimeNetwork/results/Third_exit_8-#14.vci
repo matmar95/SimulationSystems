@@ -1,0 +1,58 @@
+file 1905326 1571312668                                         
+version 2
+run Third_exit_8-14-20191017-13:44:27-2049
+attr configname Third_exit_8
+attr datetime 20191017-13:44:27
+attr experiment Third_exit_8
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network ResponseTimeNetwork
+attr processid 2049
+attr repetition 14
+attr replication #14
+attr resultdir results
+attr runnumber 14
+attr seedset 14
+param **.Source.interArrivalTime exponential(6s)
+param **.jobPriority bernoulli(0.8)
+param **.PS.serviceTimeU1 "uniform(1.2s, 2.0s)"
+param **.PS.serviceTimeU2 "uniform(2.4s, 2.8s)"
+param **.SS1.serviceTime exponential(1.4s)
+param **.SS2.serviceTime exponential(2s)
+param **.PS.exitProbability bernoulli(0.8)
+
+vector 0 ResponseTimeNetwork.SS1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 1 ResponseTimeNetwork.SS2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 2 ResponseTimeNetwork.QueueU1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 3 ResponseTimeNetwork.QueueU2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 4 ResponseTimeNetwork.sink lifeTimeU1:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs U1, vector"
+attr unit s
+vector 5 ResponseTimeNetwork.sink lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+vector 6 ResponseTimeNetwork.sink lifeTimeU2:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs U2, vector"
+attr unit s
+2	1630 976563 0 84894 0 26571.488744704967 32768 0 154 2827152 326979432
+0	978193 433315 0 95770 0 29999.414761565174 15243 0 14 24275 78521
+1	1411508 2999 0 16110 0 5143.050134681489 111 0 5 139 331
+2	1414507 131782 84895 95769 26572.615865315438 29999.414761565174 4266 121 160 593201 82888289
+3	1546289 42572 0 95739 0 29989.788526268332 1436 0 963 490474 300422386
+4	1588861 156530 5 95753 6.055848371636 29995.139275962407 3702 1.672581077424 9727.5074602961 2673605.0656024 4642694262.683
+5	1745391 158232 5 95753 6.055848371636 29995.139275962407 3744 1.672581077424 9727.5074602961 2705404.5895516 4700429618.8061
+6	1903623 1702 102 15609 50.722195849596 4983.563388037462 42 1.718884664204 3055.8362579008 31799.523949225 57735356.123078
+

@@ -1,0 +1,17 @@
+exitProb,name,mean,lowConfInt,upConfInt
+9,LifeTimeU2min,55.134,-5.564,115.833
+9,LifeTimeU1max,19393.599,18389.363,20397.835
+9,LifeTimeU2max,254.19,111.494,396.886
+9,LifeTimeU1min,2.143,1.704,2.582
+8,LifeTimeU2min,1.112,0.783,1.44
+8,LifeTimeU1max,221.195,206.452,235.938
+8,LifeTimeU2max,6698.951,5255.031,8142.872
+8,LifeTimeU1min,0.828,0.818,0.839
+5,LifeTimeU2min,0.801,0.8,0.801
+5,LifeTimeU1max,33.799,31.955,35.643
+5,LifeTimeU2max,45.59,41.569,49.612
+5,LifeTimeU1min,0.8,0.8,0.801
+2,LifeTimeU2min,0.8,0.8,0.8
+2,LifeTimeU1max,15.365,14.064,16.667
+2,LifeTimeU2max,15.492,14.161,16.823
+2,LifeTimeU1min,0.8,0.8,0.8

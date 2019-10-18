@@ -1,0 +1,53 @@
+file 2014976 1571312670                                         
+version 2
+run Third_exit_9-3-20191017-13:44:30-2059
+attr configname Third_exit_9
+attr datetime 20191017-13:44:30
+attr experiment Third_exit_9
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network ResponseTimeNetwork
+attr processid 2059
+attr repetition 3
+attr replication #3
+attr resultdir results
+attr runnumber 3
+attr seedset 3
+param **.Source.interArrivalTime exponential(6s)
+param **.jobPriority bernoulli(0.8)
+param **.PS.serviceTimeU1 "uniform(1.2s, 2.0s)"
+param **.PS.serviceTimeU2 "uniform(2.4s, 2.8s)"
+param **.SS1.serviceTime exponential(1.4s)
+param **.SS2.serviceTime exponential(2s)
+param **.PS.exitProbability bernoulli(0.9)
+
+vector 0 ResponseTimeNetwork.SS1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 1 ResponseTimeNetwork.SS2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 2 ResponseTimeNetwork.QueueU1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 3 ResponseTimeNetwork.QueueU2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 4 ResponseTimeNetwork.sink lifeTimeU1:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs U1, vector"
+attr unit s
+vector 5 ResponseTimeNetwork.sink lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+2	1480 1004896 0 82789 0 24792.602572243191 32768 0 1781 28708702 33726330952
+0	1006376 600856 0 100035 0 29989.429362942008 21151 0 15 46703 211007
+1	1607232 8 0 0 0 0 1 0 0 0 0
+2	1607240 218807 82793 100068 24793.135493335696 29999.042007343551 6861 1774 2159 13548854 26846167278
+3	1826047 31422 0 100018 0 29983.883037221379 1039 0 1038 539241 373334519
+4	1857469 78753 48 100052 17.041967452013 29994.826750116688 1860 5.700737635602 25885.381613057 10424323.066758 104819395183.66
+5	1936222 78753 48 100052 17.041967452013 29994.826750116688 1860 5.700737635602 25885.381613057 10424323.066758 104819395183.66
+
