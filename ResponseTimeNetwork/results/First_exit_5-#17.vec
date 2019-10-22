@@ -1,14 +1,14 @@
 version 2
-run First_exit_5-17-20191017-13:43:34-1865
+run First_exit_5-17-20191023-00:19:44-5140
 attr configname First_exit_5
-attr datetime 20191017-13:43:34
+attr datetime 20191023-00:19:44
 attr experiment First_exit_5
 attr inifile omnetpp.ini
 attr iterationvars ""
 attr iterationvarsf ""
 attr measurement ""
 attr network ResponseTimeNetwork
-attr processid 1865
+attr processid 5140
 attr repetition 17
 attr replication #17
 attr resultdir results

@@ -1,15 +1,15 @@
-file 601401 1571312627                                          
+file 601401 1571782791                                          
 version 2
-run Second_exit_2-14-20191017-13:43:47-1921
+run Second_exit_2-14-20191023-00:19:51-5175
 attr configname Second_exit_2
-attr datetime 20191017-13:43:47
+attr datetime 20191023-00:19:51
 attr experiment Second_exit_2
 attr inifile omnetpp.ini
 attr iterationvars ""
 attr iterationvarsf ""
 attr measurement ""
 attr network ResponseTimeNetwork
-attr processid 1921
+attr processid 5175
 attr repetition 14
 attr replication #14
 attr resultdir results

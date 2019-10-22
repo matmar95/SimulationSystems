@@ -1,14 +1,14 @@
 version 2
-run Second_exit_5-9-20191017-13:43:56-1937
+run Second_exit_5-9-20191023-00:19:59-5204
 attr configname Second_exit_5
-attr datetime 20191017-13:43:56
+attr datetime 20191023-00:19:59
 attr experiment Second_exit_5
 attr inifile omnetpp.ini
 attr iterationvars ""
 attr iterationvarsf ""
 attr measurement ""
 attr network ResponseTimeNetwork
-attr processid 1937
+attr processid 5204
 attr repetition 9
 attr replication #9
 attr resultdir results
@@ -106,6 +106,18 @@ scalar ResponseTimeNetwork.sink lifeTime:max 53.23282839075
 attr interpolationmode none
 attr title "lifetime of arrived jobs, max"
 attr unit s
+scalar ResponseTimeNetwork.sink lifeTime4s:count 2112
+attr interpolationmode none
+attr title "Numero di job con lifeTime maggiore di 4s, count"
+scalar ResponseTimeNetwork.sink lifeTime3s:count 2695
+attr interpolationmode none
+attr title "Numero di job con lifeTime maggiore di 3s, count"
+scalar ResponseTimeNetwork.sink lifeTime2s:count 3416
+attr interpolationmode none
+attr title "Numero di job con lifeTime maggiore di 2s, count"
+scalar ResponseTimeNetwork.sink numJobs:count 6077
+attr interpolationmode none
+attr title "Numero di jobs eseguiti, count"
 scalar ResponseTimeNetwork.QueueU1 queueingTime:mean 0.74828615264534
 attr interpolationmode none
 attr title "queueing time at dequeue, mean"

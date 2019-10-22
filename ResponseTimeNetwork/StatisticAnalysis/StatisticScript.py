@@ -26,13 +26,47 @@ for x in os.walk('./data'):
                             for name in files:
                                 if name != ".DS_Store":
                                     file_dir = config_dir + "/" + str(name)
-                                    print(name)
+                                    #print(name)
                                     df = pd.read_csv(file_dir)
-                                    newHeader = ['run', 'repetition', 'Module', 'Name', 'Value']
+                                    #setHeader
+                                    newHeader = ['Run', 'Repetition', 'Module', 'Name', 'Value']
                                     df.to_csv(file_dir, header=newHeader, index=False)
-                                    mean = df['Value'].mean()
-                                    stdDev = df['Value'].std()
-                                    variance = df['Value'].var()
+                                    dfNew = pd.read_csv(file_dir)
+
+                                    if name == 'LifeTimeCount.csv':
+                                        rowRatio = []
+                                        for rep in range(0, 20):
+                                            rowNumJobs = dfNew.loc[
+                                                (dfNew['Repetition'] == rep) & (dfNew['Name'] == 'numJobs:count')]
+                                            row2s = dfNew.loc[
+                                                (dfNew['Repetition'] == rep) & (dfNew['Name'] == 'lifeTime2s:count')]
+                                            row3s = dfNew.loc[
+                                                (dfNew['Repetition'] == rep) & (dfNew['Name'] == 'lifeTime3s:count')]
+                                            row4s = dfNew.loc[
+                                                (dfNew['Repetition'] == rep) & (dfNew['Name'] == 'lifeTime4s:count')]
+                                            ratio2s = int(row2s['Value']) / int(rowNumJobs['Value'])
+                                            ratio3s = int(row3s['Value']) / int(rowNumJobs['Value'])
+                                            ratio4s = int(row4s['Value']) / int(rowNumJobs['Value'])
+                                            print()
+                                            rowRatio.append([ratio2s,ratio3s, ratio4s])
+
+                                        mean = np.array(rowRatio)
+
+
+                                        print(mean)
+                                        #mean2s = rowRatio[0].mean()
+                                        #mean3s = rowRatio[1].mean()
+                                        #mean4s = rowRatio[0].mean()
+
+                                        #print(mean2s + " " + mean3s +" " + mean4s)
+
+
+
+
+
+                                    '''mean = dfNew['Value'].mean()
+                                    stdDev = dfNew['Value'].std()
+                                    variance = dfNew['Value'].var()
                                     stdErr = stdDev/(math.sqrt(runs))
                                     print("Media: " + str(mean))
                                     print("Deviazione standard: "+ str(stdDev))
@@ -61,4 +95,4 @@ for x in os.walk('./data'):
                 dfRowMinMax = pd.DataFrame(rowMinMax, columns=["exitProb", "name", "mean", "lowConfInt", "upConfInt"])
                 dfRowMinMax.to_csv('./data/' + i + '_config/results/' + i + '_LifeTimeMinMax.csv', index=False)
 
-                print(rowLifeTime)
+                #print(rowLifeTime)'''

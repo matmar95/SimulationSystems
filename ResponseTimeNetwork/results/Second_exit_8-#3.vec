@@ -1,14 +1,14 @@
 version 2
-run Second_exit_8-3-20191017-13:44:02-1953
+run Second_exit_8-3-20191023-00:20:05-5219
 attr configname Second_exit_8
-attr datetime 20191017-13:44:02
+attr datetime 20191023-00:20:05
 attr experiment Second_exit_8
 attr inifile omnetpp.ini
 attr iterationvars ""
 attr iterationvarsf ""
 attr measurement ""
 attr network ResponseTimeNetwork
-attr processid 1953
+attr processid 5219
 attr repetition 3
 attr replication #3
 attr resultdir results

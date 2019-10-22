@@ -19,6 +19,10 @@ void Sink::initialize()
     lifeTimeSignal = registerSignal("lifeTime");
     lifeTimeU1Signal = registerSignal("lifeTimeU1");
     lifeTimeU2Signal = registerSignal("lifeTimeU2");
+    lifeTime2sSignal= registerSignal("lifeTime2s");
+    lifeTime3sSignal= registerSignal("lifeTime3s");
+    lifeTime4sSignal= registerSignal("lifeTime4s");
+    numJobsSignal= registerSignal("numJobs");
     //totalQueueingTimeSignal = registerSignal("totalQueueingTime");
     //queuesVisitedSignal = registerSignal("queuesVisited");
     //totalServiceTimeSignal = registerSignal("totalServiceTime");
@@ -26,6 +30,7 @@ void Sink::initialize()
     //delaysVisitedSignal = registerSignal("delaysVisited");
     //generationSignal = registerSignal("generation");
     keepJobs = par("keepJobs");
+
 }
 
 void Sink::handleMessage(cMessage *msg)
@@ -39,6 +44,17 @@ void Sink::handleMessage(cMessage *msg)
     }
     // gather statistics
     emit(lifeTimeSignal, simTime()- job->getCreationTime());
+
+    if((job->getArrivalTime() - job->getCreationTime())>2.0){
+        emit(lifeTime2sSignal, 1);
+    }
+    if((job->getArrivalTime() - job->getCreationTime())>3.0){
+        emit(lifeTime3sSignal, 1);
+    }
+    if((job->getArrivalTime() - job->getCreationTime())>4.0){
+        emit(lifeTime4sSignal, 1);
+    }
+    emit(numJobsSignal, 1);
     //emit(totalQueueingTimeSignal, job->getTotalQueueingTime());
     //emit(queuesVisitedSignal, job->getQueueCount());
     //emit(totalServiceTimeSignal, job->getTotalServiceTime());
@@ -46,14 +62,13 @@ void Sink::handleMessage(cMessage *msg)
     //emit(delaysVisitedSignal, job->getDelayCount());
     //emit(generationSignal, job->getGeneration());
 
+
     if (!keepJobs)
         delete msg;
 }
 
 void Sink::finish()
 {
-    // TODO missing scalar statistics
-}
 
 }; //namespace
-
+}

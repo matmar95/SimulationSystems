@@ -8,6 +8,7 @@ do
     scavetool x -f 'module("*.SS1") AND (name("queueLength:mean"))' -o ../StatisticAnalysis/data/${n}_config/${n}_exit_${j}/LengthSS1.csv -F CSV-S ${n}_exit_${j}-*.sca
     scavetool x -f 'module("*.SS2") AND (name("queueLength:mean"))' -o ../StatisticAnalysis/data/${n}_config/${n}_exit_${j}/LengthSS2.csv -F CSV-S ${n}_exit_${j}-*.sca
     scavetool x -f 'module("*.sink") AND (name("lifeTime:mean"))'   -o  ../StatisticAnalysis/data/${n}_config/${n}_exit_${j}/LifeTimeTot.csv -F CSV-S ${n}_exit_${j}-*.sca
+    scavetool x -f 'module("*.sink") AND (name("lifeTime2s:count") OR name("lifeTime3s:count") OR name("lifeTime4s:count") OR name("numJobs:count"))'   -o  ../StatisticAnalysis/data/${n}_config/${n}_exit_${j}/LifeTimeCount.csv -F CSV-S ${n}_exit_${j}-*.sca
     scavetool x -f 'module("*.sink") AND (name("lifeTimeU1:mean"))' -o  ../StatisticAnalysis/data/${n}_config/${n}_exit_${j}/LifeTimeU1.csv -F CSV-S ${n}_exit_${j}-*.sca
     scavetool x -f 'module("*.sink") AND (name("lifeTimeU2:mean"))' -o  ../StatisticAnalysis/data/${n}_config/${n}_exit_${j}/LifeTimeU2.csv -F CSV-S ${n}_exit_${j}-*.sca
     scavetool x -f 'module("*.sink") AND (name("lifeTimeU1:max"))'  -o  ../StatisticAnalysis/data/${n}_config/${n}_exit_${j}/LifeTimeU1max.csv -F CSV-S ${n}_exit_${j}-*.sca

@@ -20,6 +20,14 @@ simple Sink
         @signal[lifeTime](type="simtime_t");
         @signal[lifeTimeU1](type="simtime_t");
         @signal[lifeTimeU2](type="simtime_t");
+        @signal[lifeTime2s](type="long");
+        @signal[lifeTime3s](type="long");
+        @signal[lifeTime4s](type="long");
+        @signal[numJobs](type="long");
+        @statistic[numJobs](title="Numero di jobs eseguiti";record=vector?,count;interpolationmode=none);
+        @statistic[lifeTime2s](title="Numero di job con lifeTime maggiore di 2s";record=vector?,count;interpolationmode=none);
+        @statistic[lifeTime3s](title="Numero di job con lifeTime maggiore di 3s";record=vector?,count;interpolationmode=none);
+        @statistic[lifeTime4s](title="Numero di job con lifeTime maggiore di 4s";record=vector?,count;interpolationmode=none);
         //@signal[totalQueueingTime](type="simtime_t");
         //@signal[totalDelayTime](type="simtime_t");
         //@signal[totalServiceTime](type="simtime_t");
