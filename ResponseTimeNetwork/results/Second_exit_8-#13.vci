@@ -1,15 +1,15 @@
-file 2722238 1571782809                                         
+file 2222233 1573728167                                         
 version 2
-run Second_exit_8-13-20191023-00:20:09-5229
+run Second_exit_8-13-20191114-11:42:47-8959
 attr configname Second_exit_8
-attr datetime 20191023-00:20:09
+attr datetime 20191114-11:42:47
 attr experiment Second_exit_8
 attr inifile omnetpp.ini
 attr iterationvars ""
 attr iterationvarsf ""
 attr measurement ""
 attr network ResponseTimeNetwork
-attr processid 5229
+attr processid 8959
 attr repetition 13
 attr replication #13
 attr resultdir results
@@ -23,36 +23,50 @@ param **.SS1.serviceTime exponential(1s)
 param **.SS2.serviceTime exponential(1.2s)
 param **.PS.exitProbability bernoulli(0.8)
 
-vector 0 ResponseTimeNetwork.SS1 queueLength:vector ETV
+vector 0 ResponseTimeNetwork.QueueU2 queueLength:vector ETV
 attr interpolationmode sample-hold
 attr title "queue length, vector"
 vector 1 ResponseTimeNetwork.SS2 queueLength:vector ETV
 attr interpolationmode sample-hold
 attr title "queue length, vector"
-vector 2 ResponseTimeNetwork.QueueU1 queueLength:vector ETV
-attr interpolationmode sample-hold
-attr title "queue length, vector"
-vector 3 ResponseTimeNetwork.QueueU2 queueLength:vector ETV
-attr interpolationmode sample-hold
-attr title "queue length, vector"
-vector 4 ResponseTimeNetwork.sink lifeTimeU1:vector ETV
-attr interpolationmode none
-attr title "lifetime of arrived jobs U1, vector"
-attr unit s
-vector 5 ResponseTimeNetwork.sink lifeTime:vector ETV
-attr interpolationmode none
-attr title "lifetime of arrived jobs, vector"
-attr unit s
-vector 6 ResponseTimeNetwork.sink lifeTimeU2:vector ETV
+vector 2 ResponseTimeNetwork.sink lifeTimeU2:vector ETV
 attr interpolationmode none
 attr title "lifetime of arrived jobs U2, vector"
 attr unit s
-2	1633 941422 0 138097 0 28401.168618413092 32768 0 11 50024 156740
-0	943055 322832 0 146086 0 29999.583550333912 11197 0 8 14034 35174
-1	1265887 236093 0 145873 0 29958.901362040534 8203 0 12 15399 60789
-2	1501980 58645 138101 146087 28402.084912940928 29999.583550333912 1962 0 9 3555 13193
-3	1560625 664668 0 146083 0 29999.292458658887 22551 0 84 561805 23352199
-4	2225293 149290 5 146019 8.662465106703 29986.38249071719 3535 0.831136554852 192.61347068626 69308.507165358 3046374.7109127
-5	2374583 248472 5 146019 8.662465106703 29986.38249071719 5864 0.814240057953 3357.9572912417 813946.79928417 621250095.22991
-6	2623055 99182 10 145797 13.064425742681 29944.571344719119 2329 0.814240057953 3357.9572912417 744638.29211882 618203720.519
+vector 3 ResponseTimeNetwork.sink totalServiceTimeU2:vector ETV
+attr interpolationmode none
+attr title "the total time spent  by arrived jobs U2, vector"
+attr unit s
+vector 4 ResponseTimeNetwork.sink lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+vector 5 ResponseTimeNetwork.sink totalServiceTime:vector ETV
+attr interpolationmode none
+attr title "the total time spent  by arrived jobs, vector"
+attr unit s
+vector 6 ResponseTimeNetwork.QueueU1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 7 ResponseTimeNetwork.sink lifeTimeU1:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs U1, vector"
+attr unit s
+vector 8 ResponseTimeNetwork.sink totalServiceTimeU1:vector ETV
+attr interpolationmode none
+attr title "the total time spent  by arrived jobs U1, vector"
+attr unit s
+vector 9 ResponseTimeNetwork.SS1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+0	2126 449979 47922 146083 10000.5207731561 29999.292458658887 14918 0 84 472755 21661371
+1	452105 158780 47923 145873 10000.5207731561 29958.901362040534 5408 0 12 10240 41080
+2	610885 66619 47945 145797 10004.275401314554 29944.571344719119 1543 0.814240057953 3357.9572912417 615084.90497159 564635767.13018
+3	677504 65639 47945 145797 10004.275401314554 29944.571344719119 1543 0.800483438745 62.884056495136 14311.096635761 272827.58214382
+4	743143 169935 47945 146019 10004.275401314554 29986.38249071719 3956 0.814240057953 3357.9572912417 663978.6995924 566797562.23273
+5	913078 168379 47945 146019 10004.275401314554 29986.38249071719 3956 0.800483438745 69.478914905284 36010.650452842 668134.73165598
+6	1081457 700317 47962 146087 10008.274978872513 29999.583550333912 23833 0 11 39099 129761
+7	1781774 103316 47971 146019 10010.192682324369 29986.38249071719 2413 0.831136554852 192.61347068626 48893.794620809 2161795.1025461
+8	1885090 102740 47971 146019 10010.192682324369 29986.38249071719 2413 0.800651519001 69.478914905284 21699.553817081 395307.14951216
+9	1987830 234402 47992 146086 10014.877586981767 29999.583550333912 7968 0 8 10178 25580
 

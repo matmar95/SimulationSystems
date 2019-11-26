@@ -1,15 +1,15 @@
-file 3485468 1571782809                                         
+file 2558719 1573728168                                         
 version 2
-run Second_exit_9-0-20191023-00:20:09-5231
+run Second_exit_9-0-20191114-11:42:47-8961
 attr configname Second_exit_9
-attr datetime 20191023-00:20:09
+attr datetime 20191114-11:42:47
 attr experiment Second_exit_9
 attr inifile omnetpp.ini
 attr iterationvars ""
 attr iterationvarsf ""
 attr measurement ""
 attr network ResponseTimeNetwork
-attr processid 5231
+attr processid 8961
 attr repetition 0
 attr replication #0
 attr resultdir results
@@ -23,37 +23,37 @@ param **.SS1.serviceTime exponential(1s)
 param **.SS2.serviceTime exponential(1.2s)
 param **.PS.exitProbability bernoulli(0.9)
 
-vector 0 ResponseTimeNetwork.SS1 queueLength:vector ETV
+vector 0 ResponseTimeNetwork.QueueU1 queueLength:vector ETV
 attr interpolationmode sample-hold
 attr title "queue length, vector"
-vector 1 ResponseTimeNetwork.SS2 queueLength:vector ETV
+vector 1 ResponseTimeNetwork.SS1 queueLength:vector ETV
 attr interpolationmode sample-hold
 attr title "queue length, vector"
-vector 2 ResponseTimeNetwork.QueueU1 queueLength:vector ETV
+vector 2 ResponseTimeNetwork.QueueU2 queueLength:vector ETV
 attr interpolationmode sample-hold
 attr title "queue length, vector"
-vector 3 ResponseTimeNetwork.QueueU2 queueLength:vector ETV
-attr interpolationmode sample-hold
-attr title "queue length, vector"
-vector 4 ResponseTimeNetwork.sink lifeTimeU2:vector ETV
+vector 3 ResponseTimeNetwork.sink lifeTimeU1:vector ETV
 attr interpolationmode none
-attr title "lifetime of arrived jobs U2, vector"
+attr title "lifetime of arrived jobs U1, vector"
+attr unit s
+vector 4 ResponseTimeNetwork.sink totalServiceTimeU1:vector ETV
+attr interpolationmode none
+attr title "the total time spent  by arrived jobs U1, vector"
 attr unit s
 vector 5 ResponseTimeNetwork.sink lifeTime:vector ETV
 attr interpolationmode none
 attr title "lifetime of arrived jobs, vector"
 attr unit s
-vector 6 ResponseTimeNetwork.sink lifeTimeU1:vector ETV
+vector 6 ResponseTimeNetwork.sink totalServiceTime:vector ETV
 attr interpolationmode none
-attr title "lifetime of arrived jobs U1, vector"
+attr title "the total time spent  by arrived jobs, vector"
 attr unit s
-2	1628 974319 0 84633 0 16261.662187902757 32768 0 348 5930722 1465137080
-0	975947 937937 0 115995 0 22238.813995733286 32768 0 33 170352 1810592
-0	1913884 356747 115997 156428 22239.66799962143 29999.409755874328 11847 0 24 69159 725863
-1	2270631 411 0 1965 0 397.052983827983 17 0 2 14 20
-2	2271042 883475 84637 156431 16262.49443722137 29999.830622419544 27893 337 747 15042744 8577277890
-3	3154517 78166 0 156279 0 29968.482050147104 2517 0 2398 2877390 4599380838
-4	3232683 463 52 3084 18.212535194873 614.47553472759 12 6.713209628546 371.08070718613 1235.7041139361 291952.49362333
-5	3233146 126392 52 156391 18.212535194873 29992.294549076493 2964 2.318080510988 18686.140616934 6886773.2639182 34593186648.009
-6	3359538 125929 84 156391 24.955304375509 29992.294549076493 2952 2.318080510988 18686.140616934 6885537.5598043 34592894695.515
+0	1685 1026261 52151 136486 10000.45891519491 26166.119345167709 32768 223 648 13284698 5838943160
+0	1027946 247399 136487 156431 26166.194224552321 29999.830622419544 7758 641 747 5439881 3822665711
+1	1275345 893869 52152 156428 10000.45891519491 29999.409755874328 30170 0 33 167475 1794149
+2	2169214 51930 52158 156279 10001.859137087359 29968.482050147104 1608 791 2398 2563956 4434706684
+3	2221144 84860 52184 156391 10008.076547901932 29992.294549076493 1960 232.22001154713 18686.140616934 6142050.0430267 33294555362.343
+4	2306004 83927 52184 156391 10008.076547901932 29992.294549076493 1960 0.800080037676 116.1750292903 30559.729773324 938590.93381215
+5	2389931 84860 52184 156391 10008.076547901932 29992.294549076493 1960 232.22001154713 18686.140616934 6142050.0430267 33294555362.343
+6	2474791 83927 52184 156391 10008.076547901932 29992.294549076493 1960 0.800080037676 116.1750292903 30559.729773324 938590.93381215
 

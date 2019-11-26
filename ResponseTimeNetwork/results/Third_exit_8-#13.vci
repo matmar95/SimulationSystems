@@ -1,15 +1,15 @@
-file 1927757 1571782827                                         
+file 1527182 1573728183                                         
 version 2
-run Third_exit_8-13-20191023-00:20:27-5313
+run Third_exit_8-13-20191114-11:43:03-9043
 attr configname Third_exit_8
-attr datetime 20191023-00:20:27
+attr datetime 20191114-11:43:03
 attr experiment Third_exit_8
 attr inifile omnetpp.ini
 attr iterationvars ""
 attr iterationvarsf ""
 attr measurement ""
 attr network ResponseTimeNetwork
-attr processid 5313
+attr processid 9043
 attr repetition 13
 attr replication #13
 attr resultdir results
@@ -26,33 +26,33 @@ param **.PS.exitProbability bernoulli(0.8)
 vector 0 ResponseTimeNetwork.SS1 queueLength:vector ETV
 attr interpolationmode sample-hold
 attr title "queue length, vector"
-vector 1 ResponseTimeNetwork.SS2 queueLength:vector ETV
+vector 1 ResponseTimeNetwork.QueueU1 queueLength:vector ETV
 attr interpolationmode sample-hold
 attr title "queue length, vector"
-vector 2 ResponseTimeNetwork.QueueU1 queueLength:vector ETV
+vector 2 ResponseTimeNetwork.QueueU2 queueLength:vector ETV
 attr interpolationmode sample-hold
 attr title "queue length, vector"
-vector 3 ResponseTimeNetwork.QueueU2 queueLength:vector ETV
-attr interpolationmode sample-hold
-attr title "queue length, vector"
-vector 4 ResponseTimeNetwork.sink lifeTimeU1:vector ETV
+vector 3 ResponseTimeNetwork.sink lifeTimeU1:vector ETV
 attr interpolationmode none
 attr title "lifetime of arrived jobs U1, vector"
+attr unit s
+vector 4 ResponseTimeNetwork.sink totalServiceTimeU1:vector ETV
+attr interpolationmode none
+attr title "the total time spent  by arrived jobs U1, vector"
 attr unit s
 vector 5 ResponseTimeNetwork.sink lifeTime:vector ETV
 attr interpolationmode none
 attr title "lifetime of arrived jobs, vector"
 attr unit s
-vector 6 ResponseTimeNetwork.sink lifeTimeU2:vector ETV
+vector 6 ResponseTimeNetwork.sink totalServiceTime:vector ETV
 attr interpolationmode none
-attr title "lifetime of arrived jobs U2, vector"
+attr title "the total time spent  by arrived jobs, vector"
 attr unit s
-2	1630 976098 0 83670 0 26151.924755518887 32768 0 200 3332120 485961360
-0	977728 451123 0 95982 0 29999.293663557349 15882 0 11 25227 75781
-1	1428851 60 0 1483 0 493.249594682855 3 0 1 1 1
-2	1428911 148960 83671 95983 26153.335074063831 29999.293663557349 4823 168 210 940425 183616651
-3	1577871 31201 0 95968 0 29994.239621295402 1031 0 1006 507211 339900655
-4	1609072 159143 5 95965 10.909977011987 29993.244326253471 3764 1.884573008542 8140.4139285929 3211788.8358005 6404465251.4297
-5	1768215 159342 5 95965 10.909977011987 29993.244326253471 3769 1.343322782405 8140.4139285929 3216450.4530532 6409901666.5212
-6	1927557 199 10 4725 15.974640004179 1501.046695046872 5 1.343322782405 1228.1817622182 4661.617252649 5436415.0915434
+0	1687 306795 31898 95982 10000.201502509968 29999.293663557349 10620 0 11 17018 51802
+1	308482 772342 31899 95983 10000.201502509968 29999.293663557349 25105 50 210 3953072 657203808
+2	1080824 21507 31904 95968 10001.889497420951 29994.239621295402 696 311 1006 458316 329897156
+3	1102331 106857 31908 95965 10002.457451104417 29993.244326253471 2499 84.236897400926 8140.4139285929 2957636.0847946 6283105534.2374
+4	1209188 105568 31908 95965 10002.457451104417 29993.244326253471 2499 1.200228353776 94.956516959259 32547.574597433 828537.72774822
+5	1314756 106857 31908 95965 10002.457451104417 29993.244326253471 2499 84.236897400926 8140.4139285929 2957636.0847946 6283105534.2374
+6	1421613 105568 31908 95965 10002.457451104417 29993.244326253471 2499 1.200228353776 94.956516959259 32547.574597433 828537.72774822
 

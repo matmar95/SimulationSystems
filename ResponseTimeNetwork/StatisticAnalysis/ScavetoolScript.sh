@@ -15,5 +15,9 @@ do
     scavetool x -f 'module("*.sink") AND (name("lifeTimeU1:min"))'  -o  ../StatisticAnalysis/data/${n}_config/${n}_exit_${j}/LifeTimeU1min.csv -F CSV-S ${n}_exit_${j}-*.sca
     scavetool x -f 'module("*.sink") AND (name("lifeTimeU2:max"))'  -o  ../StatisticAnalysis/data/${n}_config/${n}_exit_${j}/LifeTimeU2max.csv -F CSV-S ${n}_exit_${j}-*.sca
     scavetool x -f 'module("*.sink") AND (name("lifeTimeU2:min"))'  -o  ../StatisticAnalysis/data/${n}_config/${n}_exit_${j}/LifeTimeU2min.csv -F CSV-S ${n}_exit_${j}-*.sca
+    scavetool x -f 'module("*.sink") AND (name("totalServiceTime:sum"))'  -o  ../StatisticAnalysis/data/${n}_config/${n}_exit_${j}/TotalServiceTime.csv -F CSV-S ${n}_exit_${j}-*.sca
+    scavetool x -f 'module("*.sink") AND (name("totalServiceTimeU1:sum"))'  -o  ../StatisticAnalysis/data/${n}_config/${n}_exit_${j}/TotalServiceTimeU1.csv -F CSV-S ${n}_exit_${j}-*.sca
+    scavetool x -f 'module("*.sink") AND (name("totalServiceTimeU2:sum"))'  -o  ../StatisticAnalysis/data/${n}_config/${n}_exit_${j}/TotalServiceTimeU2.csv -F CSV-S ${n}_exit_${j}-*.sca
+
   done
 done

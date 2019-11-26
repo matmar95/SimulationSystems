@@ -1,15 +1,15 @@
-file 1912070 1571782828                                         
+file 1508872 1573728184                                         
 version 2
-run Third_exit_8-16-20191023-00:20:28-5318
+run Third_exit_8-16-20191114-11:43:04-9046
 attr configname Third_exit_8
-attr datetime 20191023-00:20:28
+attr datetime 20191114-11:43:04
 attr experiment Third_exit_8
 attr inifile omnetpp.ini
 attr iterationvars ""
 attr iterationvarsf ""
 attr measurement ""
 attr network ResponseTimeNetwork
-attr processid 5318
+attr processid 9046
 attr repetition 16
 attr replication #16
 attr resultdir results
@@ -26,33 +26,43 @@ param **.PS.exitProbability bernoulli(0.8)
 vector 0 ResponseTimeNetwork.SS1 queueLength:vector ETV
 attr interpolationmode sample-hold
 attr title "queue length, vector"
-vector 1 ResponseTimeNetwork.SS2 queueLength:vector ETV
+vector 1 ResponseTimeNetwork.QueueU1 queueLength:vector ETV
 attr interpolationmode sample-hold
 attr title "queue length, vector"
-vector 2 ResponseTimeNetwork.QueueU1 queueLength:vector ETV
-attr interpolationmode sample-hold
-attr title "queue length, vector"
-vector 3 ResponseTimeNetwork.QueueU2 queueLength:vector ETV
-attr interpolationmode sample-hold
-attr title "queue length, vector"
-vector 4 ResponseTimeNetwork.sink lifeTimeU1:vector ETV
+vector 2 ResponseTimeNetwork.sink lifeTimeU1:vector ETV
 attr interpolationmode none
 attr title "lifetime of arrived jobs U1, vector"
 attr unit s
-vector 5 ResponseTimeNetwork.sink lifeTime:vector ETV
+vector 3 ResponseTimeNetwork.sink totalServiceTimeU1:vector ETV
+attr interpolationmode none
+attr title "the total time spent  by arrived jobs U1, vector"
+attr unit s
+vector 4 ResponseTimeNetwork.sink lifeTime:vector ETV
 attr interpolationmode none
 attr title "lifetime of arrived jobs, vector"
 attr unit s
-vector 6 ResponseTimeNetwork.sink lifeTimeU2:vector ETV
+vector 5 ResponseTimeNetwork.sink totalServiceTime:vector ETV
+attr interpolationmode none
+attr title "the total time spent  by arrived jobs, vector"
+attr unit s
+vector 6 ResponseTimeNetwork.QueueU2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 7 ResponseTimeNetwork.sink lifeTimeU2:vector ETV
 attr interpolationmode none
 attr title "lifetime of arrived jobs U2, vector"
 attr unit s
-2	1630 962620 0 83940 0 26229.356453894021 32768 0 165 1658874 150902008
-0	964250 450139 0 96141 0 29999.009697573326 15841 0 13 26038 87776
-1	1414389 544 0 9213 0 2880.04360953341 21 0 2 14 18
-2	1414933 148714 83942 96140 26230.436930901951 29999.009697573326 4815 156 251 932883 183347491
-3	1563647 33498 0 95960 0 29944.393035275704 1117 0 976 484670 311099150
-4	1597145 156726 22 96115 7.093238479657 29989.892499733411 3707 2.097348036855 7017.1324044707 1779893.9601048 2408184138.0351
-5	1753871 157462 22 96115 7.093238479657 29989.892499733411 3725 2.097348036855 8974.0844369976 1812029.2094766 2523690383.832
-6	1911333 736 537 33863 167.614581113323 10645.779291445241 18 103.91807435344 8974.0844369976 32135.249371851 115506245.79694
+vector 8 ResponseTimeNetwork.sink totalServiceTimeU2:vector ETV
+attr interpolationmode none
+attr title "the total time spent  by arrived jobs U2, vector"
+attr unit s
+0	1998 307511 31842 96141 10000.408538306299 29999.009697573326 10644 0 13 18012 64630
+1	309509 764324 31843 96140 10000.408538306299 29999.009697573326 25235 0 251 2377411 328766617
+2	1073833 104235 31855 96115 10004.482491823692 29989.892499733411 2437 2.237161723761 7017.1324044707 1584450.0767422 2338201404.3019
+3	1178068 102900 31855 96115 10004.482491823692 29989.892499733411 2437 1.201731946506 97.667610379092 31253.827803979 794262.71332378
+4	1280968 104278 31855 96115 10004.482491823692 29989.892499733411 2438 2.237161723761 8974.0844369976 1593424.1611792 2418735595.7842
+5	1385246 102942 31855 96115 10004.482491823692 29989.892499733411 2438 1.201731946506 97.667610379092 31255.581792296 794265.7897988
+6	1488188 20598 31922 95960 10024.722752499646 29944.393035275704 667 312 976 428917 300521845
+7	1508786 43 33863 33863 10645.779291445241 10645.779291445241 1 8974.0844369976 8974.0844369976 8974.0844369976 80534191.482362
+8	1508829 42 33863 33863 10645.779291445241 10645.779291445241 1 1.753988316841 1.753988316841 1.753988316841 3.0764750156147
 

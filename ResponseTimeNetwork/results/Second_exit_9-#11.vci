@@ -1,15 +1,15 @@
-file 3465303 1571782815                                         
+file 2563374 1573728173                                         
 version 2
-run Second_exit_9-11-20191023-00:20:15-5258
+run Second_exit_9-11-20191114-11:42:52-8988
 attr configname Second_exit_9
-attr datetime 20191023-00:20:15
+attr datetime 20191114-11:42:52
 attr experiment Second_exit_9
 attr inifile omnetpp.ini
 attr iterationvars ""
 attr iterationvarsf ""
 attr measurement ""
 attr network ResponseTimeNetwork
-attr processid 5258
+attr processid 8988
 attr repetition 11
 attr replication #11
 attr resultdir results
@@ -23,37 +23,37 @@ param **.SS1.serviceTime exponential(1s)
 param **.SS2.serviceTime exponential(1.2s)
 param **.PS.exitProbability bernoulli(0.9)
 
-vector 0 ResponseTimeNetwork.SS1 queueLength:vector ETV
+vector 0 ResponseTimeNetwork.QueueU1 queueLength:vector ETV
 attr interpolationmode sample-hold
 attr title "queue length, vector"
-vector 1 ResponseTimeNetwork.SS2 queueLength:vector ETV
+vector 1 ResponseTimeNetwork.SS1 queueLength:vector ETV
 attr interpolationmode sample-hold
 attr title "queue length, vector"
-vector 2 ResponseTimeNetwork.QueueU1 queueLength:vector ETV
-attr interpolationmode sample-hold
-attr title "queue length, vector"
-vector 3 ResponseTimeNetwork.QueueU2 queueLength:vector ETV
-attr interpolationmode sample-hold
-attr title "queue length, vector"
-vector 4 ResponseTimeNetwork.sink lifeTimeU1:vector ETV
+vector 2 ResponseTimeNetwork.sink lifeTimeU1:vector ETV
 attr interpolationmode none
 attr title "lifetime of arrived jobs U1, vector"
 attr unit s
-vector 5 ResponseTimeNetwork.sink lifeTime:vector ETV
+vector 3 ResponseTimeNetwork.sink totalServiceTimeU1:vector ETV
+attr interpolationmode none
+attr title "the total time spent  by arrived jobs U1, vector"
+attr unit s
+vector 4 ResponseTimeNetwork.sink lifeTime:vector ETV
 attr interpolationmode none
 attr title "lifetime of arrived jobs, vector"
 attr unit s
-vector 6 ResponseTimeNetwork.sink lifeTimeU2:vector ETV
+vector 5 ResponseTimeNetwork.sink totalServiceTime:vector ETV
 attr interpolationmode none
-attr title "lifetime of arrived jobs U2, vector"
+attr title "the total time spent  by arrived jobs, vector"
 attr unit s
-2	1633 971827 0 84878 0 16338.39503464495 32768 0 328 4974626 1116642356
-0	973460 938929 0 118506 0 22809.017305831172 32768 0 34 152254 1347288
-0	1912389 337587 118508 155844 22809.357794558052 29999.173905209417 11231 0 30 60949 617083
-1	2249976 881 0 6700 0 1314.625359445605 35 0 2 21 25
-2	2250857 873396 84879 155847 16338.902727402989 29999.197201629427 27573 314 558 12240956 5558063786
-3	3124253 79211 0 155778 0 29984.802708534422 2561 0 2340 2747202 4274123136
-4	3203464 130603 20 155837 6.394064136798 29997.856093009683 3060 1.464618361729 19465.535849227 6491588.1643594 30921984020.764
-5	3334067 130919 20 155837 6.394064136798 29997.856093009683 3068 1.464618361729 19465.535849227 6494900.18975 30923909801.487
-6	3464986 316 179 5149 41.971856366469 1012.425753377299 8 34.191286874129 873.1491548353 3312.0253905529 1925780.7225365
+vector 6 ResponseTimeNetwork.QueueU2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+0	1690 1026202 51843 136147 10000.923253140806 26192.695510308739 32768 169 528 11701562 4452116252
+0	1027892 243831 136149 155847 26193.165960460804 29999.197201629427 7647 470 558 3934465 2026248835
+1	1271723 893803 51844 155844 10000.923253140806 29999.173905209417 30199 0 34 157593 1554927
+2	2165526 87182 51913 155837 10013.436175976435 29997.856093009683 2013 169.22218070864 19465.535849227 5908390.2383929 30133761480.564
+3	2252708 86263 51913 155837 10013.436175976435 29997.856093009683 2013 0.80601551421 106.98538894599 32338.171977384 997012.17337809
+4	2338971 87182 51913 155837 10013.436175976435 29997.856093009683 2013 169.22218070864 19465.535849227 5908390.2383929 30133761480.564
+5	2426153 86263 51913 155837 10013.436175976435 29997.856093009683 2013 0.80601551421 106.98538894599 32338.171977384 997012.17337809
+6	2512416 50957 51957 155778 10021.19558299264 29984.802708534422 1579 762 2340 2449029 4126512809
 

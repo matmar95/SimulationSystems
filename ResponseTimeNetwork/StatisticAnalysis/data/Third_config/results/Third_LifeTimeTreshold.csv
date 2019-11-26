@@ -1,0 +1,13 @@
+exitProb,Name,Mean,lowConfInt,upConfInt
+5,Treshold-2s,73.04,72.63,73.46
+5,Treshold-3s,62.55,62.19,62.91
+5,Treshold-4s,53.65,53.22,54.08
+2,Treshold-2s,42.16,41.79,42.54
+2,Treshold-3s,29.01,28.73,29.3
+2,Treshold-4s,19.97,19.69,20.24
+9,Treshold-2s,100.0,100.0,100.0
+9,Treshold-3s,100.0,100.0,100.0
+9,Treshold-4s,100.0,100.0,100.0
+8,Treshold-2s,100.0,100.0,100.0
+8,Treshold-3s,100.0,99.99,100.0
+8,Treshold-4s,99.99,99.98,100.0
