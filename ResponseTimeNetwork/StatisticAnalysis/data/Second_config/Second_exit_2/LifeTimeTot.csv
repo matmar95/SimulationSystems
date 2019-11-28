@@ -1,5 +1,5 @@
 Run,Repetition,Module,Name,Value
-Second_exit_2-0-20191114-11:42:28-8864,0,ResponseTimeNetwork.sink,lifeTime:mean,1.7844557198746003
+Second_exit_2-0-20191114-11:42:28-8864,0,ResponseTimeNetwork.sink,lifeTime:mean,1.7844557198746005
 Second_exit_2-1-20191114-11:42:28-8867,1,ResponseTimeNetwork.sink,lifeTime:mean,1.7838708073573
 Second_exit_2-10-20191114-11:42:30-8886,10,ResponseTimeNetwork.sink,lifeTime:mean,1.794658031239
 Second_exit_2-11-20191114-11:42:31-8887,11,ResponseTimeNetwork.sink,lifeTime:mean,1.7513927200061001

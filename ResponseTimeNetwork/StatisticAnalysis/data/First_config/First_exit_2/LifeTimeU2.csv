@@ -1,6 +1,6 @@
 Run,Repetition,Module,Name,Value
 First_exit_2-0-20191114-11:42:21-8811,0,ResponseTimeNetwork.sink,lifeTimeU2:mean,1.2812065077494
-First_exit_2-1-20191114-11:42:21-8812,1,ResponseTimeNetwork.sink,lifeTimeU2:mean,1.2533259407818997
+First_exit_2-1-20191114-11:42:21-8812,1,ResponseTimeNetwork.sink,lifeTimeU2:mean,1.2533259407818995
 First_exit_2-10-20191114-11:42:24-8838,10,ResponseTimeNetwork.sink,lifeTimeU2:mean,1.2364353903711
 First_exit_2-11-20191114-11:42:25-8841,11,ResponseTimeNetwork.sink,lifeTimeU2:mean,1.2552482389283999
 First_exit_2-12-20191114-11:42:25-8843,12,ResponseTimeNetwork.sink,lifeTimeU2:mean,1.2298679866375

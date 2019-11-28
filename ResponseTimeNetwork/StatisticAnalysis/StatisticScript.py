@@ -64,9 +64,9 @@ for x in os.walk('./data'):
                                         max_95_3s = mean[1] + (t95 * math.sqrt(variance[1]) / math.sqrt(runs))
                                         min_95_4s = mean[2] - (t95 * math.sqrt(variance[2]) / math.sqrt(runs))
                                         max_95_4s = mean[2] + (t95 * math.sqrt(variance[2]) / math.sqrt(runs))
-                                        rowLifeTimeCount.append([e, 'Treshold-2s', round(mean[0]*100, 2), round(min_95_2s*100, 2), round(max_95_2s*100, 2)])
-                                        rowLifeTimeCount.append([e, 'Treshold-3s', round(mean[1]*100, 2), round(min_95_3s*100, 2), round(max_95_3s*100, 2)])
-                                        rowLifeTimeCount.append([e, 'Treshold-4s', round(mean[2]*100, 2), round(min_95_4s*100, 2), round(max_95_4s*100, 2)])
+                                        rowLifeTimeCount.append([e, 'Threshold-2s', round(mean[0]*100, 2), round(min_95_2s*100, 2), round(max_95_2s*100, 2)])
+                                        rowLifeTimeCount.append([e, 'Threshold-3s', round(mean[1]*100, 2), round(min_95_3s*100, 2), round(max_95_3s*100, 2)])
+                                        rowLifeTimeCount.append([e, 'Threshold-4s', round(mean[2]*100, 2), round(min_95_4s*100, 2), round(max_95_4s*100, 2)])
                                     else:
                                         mean = dfNew['Value'].mean()
                                         stdDev = dfNew['Value'].std()
@@ -94,7 +94,7 @@ for x in os.walk('./data'):
                 dfRowMinMax = pd.DataFrame(rowMinMax, columns=["exitProb", "Name", "Mean", "lowConfInt", "upConfInt"])
                 dfRowMinMax.to_csv('./data/' + i + '_config/results/' + i + '_LifeTimeMinMax.csv', index=False)
                 dfLifeTimeCount = pd.DataFrame(rowLifeTimeCount, columns=["exitProb", "Name", "Mean", "lowConfInt", "upConfInt"])
-                dfLifeTimeCount.to_csv('./data/' + i + '_config/results/' + i + '_LifeTimeTreshold.csv', index=False)
+                dfLifeTimeCount.to_csv('./data/' + i + '_config/results/' + i + '_LifeTimeThreshold.csv', index=False)
                 dfServiceTime = pd.DataFrame(rowServiceTime, columns=["exitProb", "Name", "Mean"])
                 dfServiceTime.to_csv('./data/' + i + '_config/results/' + i + '_ServiceTime.csv', index=False)
 
@@ -105,8 +105,8 @@ for x in os.walk('./data'):
             lengthQueue = []
             lifeTime = []
             lifeTimeMinMax = []
-            treshold = []
-            for name in ['LengthQueue.csv', 'LifeTime.csv', 'LifeTimeMinMax.csv', 'LifeTimeTreshold.csv']:
+            threshold = []
+            for name in ['LengthQueue.csv', 'LifeTime.csv', 'LifeTimeMinMax.csv', 'LifeTimeThreshold.csv']:
                 file_dir = './data/' + i + '_config/results/'+i+"_"+name
                 df = pd.read_csv(file_dir)
                 df = df.sort_values(by=['exitProb'])
@@ -119,8 +119,8 @@ for x in os.walk('./data'):
                     arr = ['LifeTimeTot', 'LifeTimeU1', 'LifeTimeU2']
                 if name == 'LifeTimeMinMax.csv':
                     arr = ['LifeTimeU1max', 'LifeTimeU1min', 'LifeTimeU2max', 'LifeTimeU2min']
-                if name == 'LifeTimeTreshold.csv':
-                    arr = ['Treshold-2s', 'Treshold-3s', 'Treshold-4s']
+                if name == 'LifeTimeThreshold.csv':
+                    arr = ['Threshold-2s', 'Threshold-3s', 'Threshold-4s']
 
                 for element in arr:
                     arrElement = df.loc[

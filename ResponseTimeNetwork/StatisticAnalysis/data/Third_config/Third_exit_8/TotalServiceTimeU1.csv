@@ -1,7 +1,7 @@
 Run,Repetition,Module,Name,Value
 Third_exit_8-0-20191114-11:42:58-9030,0,ResponseTimeNetwork.sink,totalServiceTimeU1:sum,32845.718897943
 Third_exit_8-1-20191114-11:42:59-9031,1,ResponseTimeNetwork.sink,totalServiceTimeU1:sum,32173.736712202
-Third_exit_8-10-20191114-11:43:02-9040,10,ResponseTimeNetwork.sink,totalServiceTimeU1:sum,32613.790596900006
+Third_exit_8-10-20191114-11:43:02-9040,10,ResponseTimeNetwork.sink,totalServiceTimeU1:sum,32613.790596900013
 Third_exit_8-11-20191114-11:43:02-9041,11,ResponseTimeNetwork.sink,totalServiceTimeU1:sum,31979.377040318
 Third_exit_8-12-20191114-11:43:02-9042,12,ResponseTimeNetwork.sink,totalServiceTimeU1:sum,31645.104240808
 Third_exit_8-13-20191114-11:43:03-9043,13,ResponseTimeNetwork.sink,totalServiceTimeU1:sum,32547.574597433

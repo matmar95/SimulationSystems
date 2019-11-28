@@ -1,5 +1,5 @@
 Run,Repetition,Module,Name,Value
-First_exit_2-0-20191114-11:42:21-8811,0,ResponseTimeNetwork.sink,totalServiceTime:sum,5369.6089986857005
+First_exit_2-0-20191114-11:42:21-8811,0,ResponseTimeNetwork.sink,totalServiceTime:sum,5369.608998685701
 First_exit_2-1-20191114-11:42:21-8812,1,ResponseTimeNetwork.sink,totalServiceTime:sum,5221.6110197361995
 First_exit_2-10-20191114-11:42:24-8838,10,ResponseTimeNetwork.sink,totalServiceTime:sum,5095.039683275901
 First_exit_2-11-20191114-11:42:25-8841,11,ResponseTimeNetwork.sink,totalServiceTime:sum,5291.6826494783
