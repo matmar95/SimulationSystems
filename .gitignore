@@ -39,3 +39,9 @@
 .oppbuildspec
 .project
 .qtenvrc
+/ResponseTimeNetwork/.idea/vcs.xml
+/ResponseTimeNetwork/.idea/workspace.xml
+/ResponseTimeNetwork/.idea/misc.xml
+/ResponseTimeNetwork/.idea/modules.xml
+/ResponseTimeNetwork/StatisticAnalysis/.idea/other.xml
+/.idea/.gitignore
